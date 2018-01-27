@@ -1,0 +1,12 @@
+@if(isset($status))
+{{$msg}}
+@endif
+@extends('layouts.appmain')
+@section('content')
+	@include('inc.about')
+	@include('inc.features')
+	@include('inc.team')
+	@include('inc.clients')
+	@include('inc.portfolio')
+	@include('inc.contact')
+@endsection
