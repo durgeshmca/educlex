@@ -10,15 +10,6 @@
                   <center>  <img src="/assets/frontend/onepage2/img/banner.png" alt=""></center>
                 </div>
             </div><!-- //end heading -->
-
-            <!-- Features -->
-            <div class="row margin-bottom-70">
-                <div class="col-lg-12 lg-margin-bottom-70">
-
-                </div>
-
-            </div><!-- //end row -->
-            
         </div>
     </div>
     <!-- Features END -->

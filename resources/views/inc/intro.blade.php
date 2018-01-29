@@ -27,7 +27,7 @@
                             data-speed="900"
                             data-start="1000"
                             data-easing="easeOutExpo">
-                            <h3>We are Ready</h3>
+                            <h3>Grab the Latest<br> Hot Technologies</h3>
                         </div>
                         <div class="caption lfb tp-resizeme"
                             data-x="right"
@@ -37,8 +37,8 @@
                             data-speed="900"
                             data-start="1500"
                             data-easing="easeOutExpo">
-                            <p class="subtitle-v1">To Schedule Workshop <br>
-                            Are you Interested</p>
+                            <p class="subtitle-v1">We have all Industrial Experts<br>
+                            Join Now</p>
                         </div>
                         <div class="caption lfb tp-resizeme"
                             data-x="right"
@@ -48,7 +48,7 @@
                             data-speed="900"
                             data-start="2000"
                             data-easing="easeOutExpo">
-                            <a href="javascript:void(0);"  onclick="openForm(1);"class="btn-brd-white" data-toggle="modal" data-target='#myModal' data-backdrop="static">Workshop</a>
+                            <a href="javascript:void(0);"  onclick="openForm(1);"class="btn-brd-white" data-toggle="modal" data-target='#myModal' data-backdrop="static">Workshop Form</a>
                         </div>
 
 

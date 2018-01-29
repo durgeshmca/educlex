@@ -10,7 +10,7 @@
                         </div>
                     </div>
                     <h2>College Workshop</h2>
-                    <p>Educlex provides workshops  for Colleges, Schools and Corporates.To organize workshop in your College/School/Organization,  fill up the Request form for Organizing Workshop</p>
+                    <p>Educlex provides workshops  for Colleges, Schools and Corporates.To organize workshop in your College/School/Organization,  </p><p>fill up the Request form for Organizing Workshop.</p><p><br></p>
                     <button type="button" id ="collegew" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"  data-backdrop="static" onclick="openForm(2);">Submit Workshop Form</button>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <h2>Corporate Training</h2>
-                    <p>Staying updated is the key to thrive in this competitive age. Our training solutions are tangible and make your teams proactive in the work plan and its execution. The highly professional team of Multisoft has successfully involved and drives success in a variety of different corporate cultures. We seamlessly determine your training requirements, mode of delivery and infrastructure required.</p>
+                    <p>Staying updated is the key to thrive in this competitive age. Our training solutions are tangible and make your teams proactive in the work plan and its execution.  We seamlessly determine your training requirements, mode of delivery and infrastructure required.</p>
 <button type="button" id ="corporate" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"  data-backdrop="static" onclick="openForm(3);">Corporate Training Form</button>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <h2>Class Room Training</h2>
-                    <p>Classroom Training is a live training by the domain expert Instructor. The physical presence of both the trainer and the trainee provides an opportunity for face-to-face interaction. This platform facilitates in creating constructive dialogue and allows the participants to gain additional guidance. Students and working professionals can enroll themselves for classroom training, depending on each course’s eligibility criteria.</p>
+                    <p>Classroom Training is a live training by the domain expert Instructor.</p><p> Students and working professionals can enroll themselves for classroom training, depending on each course’s eligibility criteria.</p><p><br/></p>
 <button type="button" id ="collegew" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"  data-backdrop="static" onclick="openForm(5);">Class room Training Form</button>
                 </div>
             </div>
