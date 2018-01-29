@@ -14,6 +14,7 @@
 Route::get('/', 'Pages@main');//main page
 Route::get('/home', 'Pages@main');
 Route::get('/form/{name?}', 'Pages@getForms');//get desired form
+Route::get('/course/get/{id?}', 'CoursesController@getCourse');//get desired course details
 Route::post('/workshop/submit', 'WrkshopController@submit');//submit worshop form
 Route::post('/contact/submit', 'Contacts@submit');
 Route::post('/college/workshop/submit', 'WrkshopController@submitCollegeWorkshop');

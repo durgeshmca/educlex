@@ -3,54 +3,41 @@
     <div class="pricing-bg">
         <div class="container">
             <div class="heading">
-                <h2>Course <strong>Pricing</strong></h2>
-                <P>Compare us from others <br> for more in less</P>
+                <h2>Course <strong>Technical Courses Offered</strong></h2>
+                <P>offers corporate training in both technical and Management Courses. <br> The list of courses given below </P>
             </div><!-- //end heading -->
 
             <!-- Pricing -->
             <div class="row no-space-row">
-                <div class="col-md-4">
-                    <div class="pricing no-right-brd">
-                        <img src="/assets/frontend/onepage2/img/widgets/icon4.png" alt="">
-                        <h4>Corporate Training</h4>
-                        <span>Rs 15000 </span>
-                        <ul class="pricing-features">
-                            <li>1 week</li>
-                            <li>Dration 1 hrs</li>
-                            <li>Unlimited Users</li>
-
-                        </ul>
-                        <button type="button" class="btn-brd-primary">Register</button>
+              @if(count($courses))
+              <?php $totalData= count($courses);
+                     $half=ceil($totalData/2);
+                    for($i=1; $i < $half; $i++){
+                      $firstHalf[]=$courses[$i];
+                    }
+                    for($i=$half; $i < $totalData; $i++){
+                      $secondHalf[]=$courses[$i];
+                    }
+               ?>
+                <div class="col-md-6">
+                    <div class="">
+                        <ul class="pricing-features listTick">
+                            @foreach($firstHalf as $course)
+                            <li><a href="javascript:void(0);" onclick="openCourse({{$course->id}});"> {{$course->course}}</a></li>
+                            @endforeach
+                          </ul>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="pricing pricing-red">
-                        <img src="/assets/frontend/onepage2/img/widgets/icon5.png" alt="">
-                        <h4>Class Room Training</h4>
-                        <span>Rs 25000</span>
-                        <ul class="pricing-features">
-                            <li>3 months</li>
-                            <li>Duration 2 hrs</li>
-                            <li>Unlimited Users</li>
-
-                        </ul>
-                        <button type="button" class="btn-brd-white">Register</button>
+                <div class="col-md-6">
+                    <div class="">
+                        <ul class="pricing-features listTick">
+                            @foreach($secondHalf as $course)
+                            <li><a href="javascript:void(0);" onclick="openCourse({{$course->id}});">{{$course->course}}</a></li>
+                            @endforeach
+                          </ul>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="pricing no-left-brd">
-                        <img src="/assets/frontend/onepage2/img/widgets/icon6.png" alt="">
-                        <h4>On demand Training</h4>
-                        <span>Rs 20000 </span>
-                        <ul class="pricing-features">
-                            <li>2 months</li>
-                            <li>Duration 1 hrs</li>
-                            <li>1 - 10 Users</li>
-
-                        </ul>
-                        <button type="button" class="btn-brd-primary">Register</button>
-                    </div>
-                </div>
+                @endif
             </div><!-- //end row -->
             <!-- End Pricing -->
         </div>

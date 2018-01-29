@@ -39,7 +39,7 @@
     <!-- Footer Coypright -->
     <div class="footer-copyright">
         <div class="container">
-            <h3>Verclex Network Pvt Ltd</h3>
+            <h3>A Unit Of Verclex Network Pvt Ltd</h3>
             <ul class="copyright-socials">
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
