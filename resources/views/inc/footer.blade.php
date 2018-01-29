@@ -94,6 +94,26 @@ function ShowMe(value)
     $('.emp').show();
   }
 }
+
+function openCourse(cid){
+var srcurl="/course/get/"+cid;
+    var wait='<div class="progress"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">Please Wait....</div></div>';
+    $("#mbody").html(wait);
+    $('#myModal').modal('show');
+    $.ajax({
+      url : srcurl,
+      success : function(data,result){
+            $("#mbody").html(data);
+        },
+      error : function(xhr,status,error){
+        var err ='<div class="alert alert-danger">Request has been '+error+'</div>';
+        $("#mbody").html(err);
+      }
+
+    });
+
+
+}
 </script>
 <!-- END JAVASCRIPTS -->
 </body>

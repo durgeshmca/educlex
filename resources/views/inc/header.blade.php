@@ -29,6 +29,19 @@
 <link href="/assets/frontend/onepage2/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
+<style>
+.listTick {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+.listTick li {
+  background: url('/assets/images/tick.png') no-repeat 0px 10px;
+  padding: 6px 0 0px 20px;
+}
+</style>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->

@@ -3,6 +3,7 @@
 	@include('inc.about')
 	@include('inc.features')
 	@include('inc.team')
+	@include('inc.pricing')
 	@include('inc.clients')
 	@include('inc.portfolio')
 	@include('inc.contact')
