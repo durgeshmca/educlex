@@ -7,7 +7,8 @@ use App\CollegeWrokshop;
 use App\Corporate;
 use App\IndustrialTraining;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WorkshopMail;
 class WrkshopController extends Controller
 {
     //workshop Controller
@@ -52,6 +53,7 @@ class WrkshopController extends Controller
         $workshop->interests = implode(',',$request->interest);
         if($workshop->save())
         {
+           Mail::to($request->email)->send(new WorkshopMail($request));
           return redirect('/')->with('status','Your Workshop Enquiry has been saved We shall get back to you soon');
         }
         else
@@ -172,5 +174,5 @@ class WrkshopController extends Controller
           return redirect('/#about')->with('status','Your Industrial Training Enquiry failed. Please try after sometimes.');
       }
     }
-    
+
 }

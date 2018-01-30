@@ -1,1 +1,1 @@
-hellow friend
+<?php var_dump($request); ?>

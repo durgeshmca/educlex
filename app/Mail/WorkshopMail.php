@@ -6,19 +6,19 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-
-class WorshopMail extends Mailable
+use Illuminate\Http\Request;
+class WorkshopMail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $request;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
-        //
+        $this->request=$request;
     }
 
     /**
@@ -28,6 +28,7 @@ class WorshopMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emailworkshop');
+        return $this->from('info@educlex.com')
+                    ->view('emailworkshop');
     }
 }
