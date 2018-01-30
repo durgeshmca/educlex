@@ -39,7 +39,7 @@ $('#myModal').modal('show');
 @if(session('status'))
 $('#myModal').modal('show');
 @endif
-
+$('#myModal').modal('show');
 });
 function openForm(formid){
 var srcurl="/form/workshop";

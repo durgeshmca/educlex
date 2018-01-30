@@ -1,8 +1,10 @@
 <?php
-
 namespace App\Http\Controllers;
+
 use App\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WorkshopMail;
 
 class Contacts extends Controller
 {
@@ -23,6 +25,7 @@ class Contacts extends Controller
       $contact->subject=$request->subject;
       if($contact->save())
       {
+        Mail::to($request->email)->send(new WorkshopMail($request));
         return redirect('/#contact')->with('status', 'Thank you for contacting us . We will get back to you soon');
       }else {
         return redirect('/#contact')->with('status', 'Sorry !!.Due to some technical error .We are unable to recieve your queries.');

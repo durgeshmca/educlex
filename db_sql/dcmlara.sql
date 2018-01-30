@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 29, 2018 at 01:13 PM
+-- Generation Time: Jan 30, 2018 at 01:26 PM
 -- Server version: 5.7.19
 -- PHP Version: 7.1.9
 
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `college_wrokshops` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `college_wrokshops`
@@ -87,7 +87,10 @@ CREATE TABLE IF NOT EXISTS `college_wrokshops` (
 INSERT INTO `college_wrokshops` (`id`, `fname`, `lname`, `email`, `contact`, `college`, `address`, `landmark`, `state`, `city`, `images`, `total_students`, `interests`, `payment_mode`, `placement_assistance`, `created_at`, `updated_at`) VALUES
 (1, 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'United Institute of Management', 'Naini Allahabad', 'Deys medical Crossroads', 'Uttar Pradesh', 'Allahabad', NULL, 20, 'php,java,python', NULL, 1, '2018-01-25 21:45:20', '2018-01-25 21:45:20'),
 (2, 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'UIM Naini Allahabad', 'Noida', 'Deys medical Crossroads', 'Uttar Pradesh', 'Allahabad', NULL, 111, 'php', NULL, 0, '2018-01-25 21:48:50', '2018-01-25 21:48:50'),
-(3, 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'United Institute of Management', 'Naini Allahabad', 'Deys medical Crossroads', 'Uttar Pradesh', 'All', 'uploads/iejAB2IxpYSC95sy6cPfoI2pNN7zkqWHrUTgfstj.png,uploads/Nao8cOq9JQKZxXeQEENgYiZu4S3yTaNXGjRxXHG4.png,uploads/VbZOXQ3NQg3dJkQVazs0AOL6F3cydTRI7GlHu8ra.png', 103, 'hadoop,php,python', NULL, 1, '2018-01-25 22:21:06', '2018-01-25 22:21:06');
+(3, 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'United Institute of Management', 'Naini Allahabad', 'Deys medical Crossroads', 'Uttar Pradesh', 'All', 'uploads/iejAB2IxpYSC95sy6cPfoI2pNN7zkqWHrUTgfstj.png,uploads/Nao8cOq9JQKZxXeQEENgYiZu4S3yTaNXGjRxXHG4.png,uploads/VbZOXQ3NQg3dJkQVazs0AOL6F3cydTRI7GlHu8ra.png', 103, 'hadoop,php,python', NULL, 1, '2018-01-25 22:21:06', '2018-01-25 22:21:06'),
+(4, 'Durgesh', 'Mishra', 'durgeshcmishra@live.in', '9811167005', 'UIM Naini Allahabad', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'uploads/uWtgMRlcm6627mblEDr8GpGaR3fiIaXvqArL4O4E.png,uploads/2ZgsWlMANcxUu86l518UMxp5GRRQfiGbMk6euVOr.png,uploads/F0SKfEziP5YRn8ixANjooGEitlOeF8wylLBI5xQk.png', 124, 'hadoop,php,java', NULL, 0, '2018-01-30 05:30:45', '2018-01-30 05:30:45'),
+(5, 'Durgesh', 'Mishra', 'durgeshcmishra@live.in', '9811167005', 'UIM Naini Allahabad', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'uploads/87RQdzoexMPxGurBUzl9nttqm6oawDhKLKCkaOsr.png,uploads/VWpiQ4ABXJ0HDcOe9RYXjMJKwJlS68pbFUC1shFv.png,uploads/FjTGNtdTr06aKxBvzM7VD4YaCspumH9LO72asX24.png', 124, 'hadoop,php,java', NULL, 0, '2018-01-30 05:31:27', '2018-01-30 05:31:27'),
+(6, 'Durgesh', 'Mishra', 'durgeshcmishra@live.in', '9811167005', 'UIM Naini Allahabad', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'uploads/TY5KvCfBl62nG1Kl7msnTEvW5yusKMXbevst136e.png,uploads/k8dIAqhZ4y7ic0x1hiAMwuLY5ihNdptlnE0w8Duc.png,uploads/qq39rZhPjWKxs6fRhyEwOyRqGiO7NctcvE4tCIGs.png', 124, 'hadoop,php,java', NULL, 0, '2018-01-30 05:47:03', '2018-01-30 05:47:03');
 
 -- --------------------------------------------------------
 
@@ -100,12 +103,20 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `subject` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `name`, `email`, `phone`, `subject`, `message`, `created_at`, `updated_at`) VALUES
+(1, 'Durgesh Chandra Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'php java', 'hi how r u', '2018-01-30 07:26:32', '2018-01-30 07:26:32');
 
 -- --------------------------------------------------------
 
@@ -308,7 +319,7 @@ CREATE TABLE IF NOT EXISTS `workshop_enquiries` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `workshop_enquiries`
@@ -317,7 +328,22 @@ CREATE TABLE IF NOT EXISTS `workshop_enquiries` (
 INSERT INTO `workshop_enquiries` (`id`, `enquiry_type`, `fname`, `lname`, `email`, `contact`, `addres`, `landmark`, `state`, `city`, `category`, `qualification`, `Designation`, `company`, `college`, `year_sem`, `interests`, `images`, `created_at`, `updated_at`) VALUES
 (1, 'individual', 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', NULL, 'Uttar Pradesh', 'Pratapgarh', 'professional', 'B.Tech/B.E.', 'Team Leader', 'Xsinfosol', NULL, '8', 'hadoop,php,java', NULL, '2018-01-24 20:47:47', '2018-01-24 20:47:47'),
 (2, 'individual', 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'student', 'B.Tech/B.E.', NULL, NULL, 'United Institute of Management', '4', 'hadoop,php,java', 'uploads.individual/WHIwvpTH3G3SwXXAbAjQptq9DETVSst2FMVi6M19.jpeg', '2018-01-26 10:31:38', '2018-01-26 10:31:38'),
-(3, 'classroom', 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'professional', 'MCA', 'Team Leader', 'Xsinfosol', NULL, '-1', 'hadoop,php', 'uploads.individual/2GOGn3mhcEvn2Zf3LA8QG05aERCAtglSZzgIknL8.jpeg', '2018-01-26 11:01:09', '2018-01-26 11:01:09');
+(3, 'classroom', 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'professional', 'MCA', 'Team Leader', 'Xsinfosol', NULL, '-1', 'hadoop,php', 'uploads.individual/2GOGn3mhcEvn2Zf3LA8QG05aERCAtglSZzgIknL8.jpeg', '2018-01-26 11:01:09', '2018-01-26 11:01:09'),
+(4, 'individual', 'Durgesh', 'Mishra', 'durgesh@xsinfosol.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'professional', 'BSC', 'Team Leader', 'Xsinfosol', NULL, '-1', 'hadoop,php,python', 'uploads.individual/eHYEay5N9IadRJJuyYPRt5RjxVWisWNCdaHidx88.png', '2018-01-29 23:32:56', '2018-01-29 23:32:56'),
+(5, 'individual', 'Durgesh', 'Mishra', 'durgesh@xsinfosol.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'professional', 'BSC', 'Team Leader', 'Xsinfosol', NULL, '-1', 'hadoop,php,python', 'uploads.individual/yDLqnVscKrMMZnumedut485qoH3B91feHoClscuJ.png', '2018-01-29 23:35:27', '2018-01-29 23:35:27'),
+(6, 'individual', 'Durgesh', 'Mishra', 'durgesh@xsinfosol.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'professional', 'BSC', 'Team Leader', 'Xsinfosol', NULL, '-1', 'hadoop,php,python', 'uploads.individual/JuWS7kBsSShGqiSNnJTgc5H1EZ3krCtd4cJlE4Ns.png', '2018-01-29 23:37:40', '2018-01-29 23:37:40'),
+(7, 'individual', 'Durgesh', 'Mishra', 'durgesh@xsinfosol.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'professional', 'BSC', 'Team Leader', 'Xsinfosol', NULL, '-1', 'hadoop,php,python', 'uploads.individual/N24l8ESfN62ngJ0qIhFw36xBcjSoAMRxcGxFpSsg.png', '2018-01-29 23:38:24', '2018-01-29 23:38:24'),
+(8, 'individual', 'Durgesh', 'Mishra', 'durgesh@xsinfosol.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'professional', 'BSC', 'Team Leader', 'Xsinfosol', NULL, '-1', 'hadoop,php,python', 'uploads.individual/Mlu6l9yEMxlPt60v0dDwIFKzZknjQf7HRq4l7qdX.png', '2018-01-29 23:40:20', '2018-01-29 23:40:20'),
+(9, 'individual', 'Durgesh', 'Mishra', 'durgesh@xsinfosol.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'professional', 'BSC', 'Team Leader', 'Xsinfosol', NULL, '-1', 'hadoop,php,python', 'uploads.individual/4oqxcyCU7A7W4llXdmp3NyfCzzywp3FvQDcpu392.png', '2018-01-29 23:41:41', '2018-01-29 23:41:41'),
+(10, 'individual', 'Durgesh', 'Mishra', 'durgesh@xsinfosol.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'professional', 'BSC', 'Team Leader', 'Xsinfosol', NULL, '-1', 'hadoop,php,python', 'uploads.individual/NgiUu2myyq0f8NLUqFSynv6ilaiFxeeftElDfeDF.png', '2018-01-29 23:42:05', '2018-01-29 23:42:05'),
+(11, 'individual', 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'student', 'B.Tech/B.E.', NULL, NULL, 'United Institute of Management', '3', 'hadoop,php,java,python', 'uploads.individual/4N2nUyKB8TQMzk9MJH1WefxL0EXWzP6nxGD7YBsR.png', '2018-01-30 00:28:53', '2018-01-30 00:28:53'),
+(12, 'individual', 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'student', 'B.Tech/B.E.', NULL, NULL, 'United Institute of Management', '3', 'hadoop,php,java,python', 'uploads.individual/CKFLgSzK5QpPamIzwmkSKHqDbVFiq3KV9YJqmPep.png', '2018-01-30 00:30:03', '2018-01-30 00:30:03'),
+(13, 'individual', 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'professional', 'B.Tech/B.E.', 'Team Leader', 'Xsinfosol', NULL, '-1', 'hadoop,java,python', 'uploads.individual/Dp5MZ3jP9iryGPiim1AKnu0gxMd9SB4nVIPKoZKt.png', '2018-01-30 00:31:22', '2018-01-30 00:31:22'),
+(14, 'individual', 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'professional', 'B.Tech/B.E.', 'Team Leader', 'Xsinfosol', NULL, '-1', 'hadoop,java,python', 'uploads.individual/tX37gGxMFTFpzKwUxjx0y8JGjDgkTdw0WKkbQIC3.png', '2018-01-30 00:32:58', '2018-01-30 00:32:58'),
+(15, 'individual', 'Durgesh', 'Mishra', 'durgesh@xsinfosol.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'student', 'B.Tech/B.E.', NULL, NULL, 'UIM Naini Allahabad', '6', 'java', 'uploads.individual/7eHlJyUktYEEIbG0ogsm9jqu5rwbPI2GETtSOwDT.jpeg', '2018-01-30 00:39:15', '2018-01-30 00:39:15'),
+(16, 'individual', 'Durgesh', 'Mishra', 'durgesh@xsinfosol.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'student', 'B.Tech/B.E.', NULL, NULL, 'UIM Naini Allahabad', '6', 'java', 'uploads.individual/XIvLTYdpxp2pPguuynFnNkrj0hTjsoS6HsYxlaHt.jpeg', '2018-01-30 00:39:51', '2018-01-30 00:39:51'),
+(17, 'individual', 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'student', 'B.Tech/B.E.', NULL, NULL, 'UIM Naini Allahabad', '2', 'python,ds', 'uploads.individual/1FWP3KLhMJQZeQKchNTqOpPjIBoLSnXXcbBpZivu.png', '2018-01-30 00:42:33', '2018-01-30 00:42:33'),
+(18, 'individual', 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'student', 'BPHARMA', NULL, NULL, 'UIM Naini Allahabad', '7', 'hadoop,php,java', 'uploads.individual/91UyHcywhkhHLbvdJVbyctwgFWYrN9lnrF565rvu.png', '2018-01-30 05:51:24', '2018-01-30 05:51:24');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

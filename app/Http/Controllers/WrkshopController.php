@@ -113,6 +113,7 @@ class WrkshopController extends Controller
       $colworksh->interests = implode(',',$request->interest);
       if($colworksh->save())
       {
+        Mail::to($request->email)->send(new WorkshopMail($request));
         return redirect('/#about')->with('status','Your Workshop Enquiry has been saved We shall get back to you soon');
       }
       else
@@ -167,6 +168,7 @@ class WrkshopController extends Controller
       $corworksh->interests = implode(',',$request->interest);
       if($corworksh->save())
       {
+        Mail::to($request->email)->send(new WorkshopMail($request));
         return redirect('/#about')->with('status','Your Industrial Training Enquiry has been saved We shall get back to you soon');
       }
       else

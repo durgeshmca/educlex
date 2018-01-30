@@ -22,8 +22,8 @@
                         <div class="caption lfb tp-resizeme"
                             data-x="right"
                             data-y="center"
-                            data-hoffset="0"
-                            data-voffset="-70"
+                            data-hoffset="100"
+                            data-voffset="-90"
                             data-speed="900"
                             data-start="1000"
                             data-easing="easeOutExpo">

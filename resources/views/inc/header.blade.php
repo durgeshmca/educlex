@@ -67,12 +67,13 @@
               @endforeach
           </ul>
       </div>
-  @endif
-  @if(session('status'))
+  @elseif(session('status'))
   <div class="alert alert-success">
   {{session('status')}}
 </div>
-  @endif
+@else
+  @include('forms.popup')
+@endif
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

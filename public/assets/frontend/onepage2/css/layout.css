@@ -271,13 +271,13 @@ a:focus {
 /* Focus stylesheet effect for 'input' */
 .form-control {
   color: #97a7b4;
-  font-size: 17px;
+  /*font-size: 17px;*/
   font-weight: 300;
   min-width: 100px;
-  min-height: 50px;
+/*  min-height: 50px;*/
   border-radius: 0;
   box-shadow: none;
-  border-color: #3b4e5f;
+/*  border-color: #3b4e5f;*/
   background: transparent;
 }
 .form-control:-moz-placeholder {

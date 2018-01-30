@@ -29,6 +29,7 @@ class WorkshopMail extends Mailable
     public function build()
     {
         return $this->from('info@educlex.com')
-                    ->view('emailworkshop');
+                    ->view('emailworkshop')
+                    ->with(['name'=>$this->request->fname,'interests'=>$this->request->interest]);
     }
 }
