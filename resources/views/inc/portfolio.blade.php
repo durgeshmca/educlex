@@ -3,7 +3,7 @@
     <div class="portfolio">
         <div class="container">
             <div class="heading">
-                <h2>Our <strong>Portfolio</strong></h2>
+                <h2>Demo and <strong>Live Projects</strong></h2>
             </div>
 
             <div class="cube-portfolio">
@@ -23,7 +23,7 @@
                                 Best Training Provider
                             </h2>
                             <p>We are No. 1 Training provider. We provide training from working professionals who have a very deep understanding in subjects theoratically as well as practically</p><br>
-                            <a href="#" class="btn-brd-primary">Read More</a>
+                          <p>We provide training on demo and live projets which give you basic to deep understanding of the subject</p>
                         </div>
                     </div>
                     <div class="col-md-7">

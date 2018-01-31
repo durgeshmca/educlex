@@ -32,16 +32,16 @@
                         <a href="#about">About</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#features">Features</a>
+                        <a href="#features">Technologies</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#team">Team</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#clients">Clients</a>
+                        <a href="#pricing">Courses</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
+                        <a href="#portfolio">Projects</a>
                     </li>
 
                     <li class="page-scroll">

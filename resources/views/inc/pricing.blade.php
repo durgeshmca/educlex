@@ -12,7 +12,7 @@
               @if(count($courses))
               <?php $totalData= count($courses);
                      $half=ceil($totalData/2);
-                    for($i=1; $i < $half; $i++){
+                    for($i=0; $i < $half; $i++){
                       $firstHalf[]=$courses[$i];
                     }
                     for($i=$half; $i < $totalData; $i++){
