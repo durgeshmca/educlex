@@ -8,6 +8,7 @@ class Pages extends Controller
 {
     public function main()
     {
+      $courses = Course::get(['id','course']) ;
       return view('main')->with('courses',$courses);
    }
    public function getForms($name)
