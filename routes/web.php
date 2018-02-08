@@ -21,3 +21,6 @@ Route::post('/college/workshop/submit', 'WrkshopController@submitCollegeWorkshop
 Route::post('/corporate/workshop/submit', 'WrkshopController@submitCorporateTraining');
 Route::post('/industrial/training/submit', 'WrkshopController@submitIndustrialTraining');
 Route::post('/classroom/training/submit', 'WrkshopController@submit');
+Route::get('/albums', 'AlbumsController@index');
+Route::get('/albums/{id}', 'AlbumsController@show');
+Route::get('/photos/{id}', 'PhotosController@show');

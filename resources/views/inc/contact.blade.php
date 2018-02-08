@@ -9,6 +9,7 @@
                         <h2>Say hello to Educlex</h2>
                         <p>Send your queries and register with us <br> for your training needs</p>
                         <p>Contact No: +91-7053601998</p>
+                        <p>Email ID : info@educlex.com</p>
                     </div>
                 </div>
                 <div class="col-sm-6">

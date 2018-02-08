@@ -2,7 +2,7 @@
 @section('content')
 	@include('inc.about')
 	@include('inc.features')
-	@include('inc.team')
+	<?php //@include('inc.team')?>
 	@include('inc.pricing')
 	@include('inc.clients')
 	@include('inc.portfolio')
