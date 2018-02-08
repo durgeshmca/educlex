@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'durgesh@xsinfosol.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'info@educlex.com'),
         'name' => env('MAIL_FROM_NAME', 'Educlex'),
     ],
 
@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', ''),
+    'encryption' => env('MAIL_ENCRYPTION', 'SSL'),
 
     /*
     |--------------------------------------------------------------------------
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => 'durgesh@xsinfosol.com',
+    'username' => 'info@educlex.com',
 
-    'password' => '/*@durgesh098',
+    'password' => '}9mHRAk=q;^8',
 
     /*
     |--------------------------------------------------------------------------
