@@ -7,7 +7,7 @@
                 <h2><strong>Technologies</strong> Expertise</h2>
                 <p>We are expert in:</p>
                 <div class="features-bg">
-                  <center>  <img src="/assets/frontend/onepage2/img/banner.png" alt=""></center>
+                  <center>  <img src="/assets/frontend/onepage2/img/banner.png"  class="img-responsive"alt=""></center>
                 </div>
             </div><!-- //end heading -->
         </div>
