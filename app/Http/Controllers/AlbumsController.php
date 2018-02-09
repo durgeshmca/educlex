@@ -24,7 +24,7 @@ class AlbumsController extends Controller
      */
     public function create()
     {
-        //
+          return view('admin.album.create');
     }
 
     /**
@@ -35,7 +35,35 @@ class AlbumsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $this->validate($request, [
+      'name' => 'required',
+      'cover_image' => 'image|max:1999'
+    ]);
+
+    // Get filename with extension
+    $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+
+    // Get just the filename
+    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+    // Get extension
+    $extension = $request->file('cover_image')->getClientOriginalExtension();
+
+    // Create new filename
+    $filenameToStore = $filename.'_'.time().'.'.$extension;
+
+    // Uplaod image
+    //$path= $request->file('cover_image')->storeAs(public_path().'/storage/album_covers/', $filenameToStore);
+    $request->file('cover_image')->move(public_path("/storage/album_covers"), $filenameToStore);
+    // Create album
+    $album = new Album;
+    $album->name = $request->input('name');
+    $album->description = $request->input('description');
+    $album->cover_image = $filenameToStore;
+
+    $album->save();
+
+    return redirect('/albums/create')->with('success', 'Album Created');
     }
 
     /**
@@ -82,5 +110,10 @@ class AlbumsController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function adminIndex()
+    {
+      $albums = Album::with('Photos')->get();
+      return view('admin.album.index')->with('albums', $albums);
     }
 }

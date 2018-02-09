@@ -9,14 +9,14 @@
           @if($i == $colcount)
              <div class='col-sm-4'>
                <a href="javascript:void(0);"  onclick="openAlbum({{$album->id}});" >
-                  <img class="thumbnail" src="storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}" height="200" width="200">
+                  <img class="thumbnail" src="/storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}" height="200" width="200">
                 </a>
                <br>
                <h4>{{$album->name}}</h4>
           @else
             <div class='col-sm-4'>
               <a href="javascript:void(0);"  onclick="openAlbum({{$album->id}});"">
-                <img class="thumbnail" src="storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}" height="200" width="200">
+                <img class="thumbnail" src="/storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}" height="200" width="200">
               </a>
               <br>
               <h4>{{$album->name}}</h4>
