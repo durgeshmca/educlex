@@ -29,9 +29,15 @@
         </form>
         <!-- END RESPONSIVE QUICK SEARCH FORM -->
       </li>
+      <li class="active">
+        <a href="/dashboard">
+        <i class="icon-home"></i>
+        <span class="title">Dashboard</span>
+
+        </a>
       <li class="start ">
         <a href="javascript:;">
-        <i class="icon-home"></i>
+        <i class="icon-present"></i>
         <span class="title">Album</span>
         <span class="arrow "></span>
         </a>
@@ -50,6 +56,40 @@
             <a href="/photos/create/0">
             <i class="icon-graph"></i>
             Add New Photo</a>
+          </li>
+        </ul>
+      </li>
+      <li class="start ">
+        <a href="javascript:;">
+        <i class="icon-present"></i>
+        <span class="title">Enquiries</span>
+        <span class="arrow "></span>
+        </a>
+        <ul class="sub-menu">
+          <li>
+            <a href="/enquires/view/individual">
+            <i class="icon-bar-chart"></i>
+            Individual</a>
+          </li>
+          <li >
+            <a href="#">
+            <i class="icon-bulb"></i>
+            Class Room</a>
+          </li>
+          <li>
+            <a href="#">
+            <i class="icon-graph"></i>
+            Corporate</a>
+          </li>
+          <li>
+            <a href="#">
+            <i class="icon-graph"></i>
+            Industrial</a>
+          </li>
+          <li>
+            <a href="#">
+            <i class="icon-graph"></i>
+            College Workshops</a>
           </li>
         </ul>
       </li>

@@ -22,11 +22,16 @@ Route::post('/corporate/workshop/submit', 'WrkshopController@submitCorporateTrai
 Route::post('/industrial/training/submit', 'WrkshopController@submitIndustrialTraining');
 Route::post('/classroom/training/submit', 'WrkshopController@submit');
 
+Auth::routes();
+
 Route::get('/albums', 'AlbumsController@index');
-Route::get('/albums/create', 'AlbumsController@create');
-Route::post('/albums/store', 'AlbumsController@store');
-Route::get('/albums/show', 'AlbumsController@adminIndex');
+Route::get('/albums/create', 'AlbumsController@create')->middleware('auth');
+Route::post('/albums/store', 'AlbumsController@store')->middleware('auth');
+Route::get('/albums/show', 'AlbumsController@adminIndex')->middleware('auth');
 Route::get('/albums/{id}', 'AlbumsController@show');
-Route::get('/photos/create/{id}', 'PhotosController@create');
-Route::post('/photos/store', 'PhotosController@store');
+Route::get('/photos/create/{id}', 'PhotosController@create')->middleware('auth');
+Route::post('/photos/store', 'PhotosController@store')->middleware('auth');
 Route::get('/photos/{id}', 'PhotosController@show');
+Route::get('/dashboard', 'Dashboards@index')->middleware('auth');
+Route::get('/enquires/view/individual','EnquiresController@individualView');
+Route::get('/enquires/view/individual/{id}','EnquiresController@individualView');

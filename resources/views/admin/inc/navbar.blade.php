@@ -4,8 +4,8 @@
 	<div class="page-header-inner">
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
-			<a href="index.html">
-			<img src="/assets/frontend/onepage2/img/logo_default.png"  height="70" width="100" alt="logo" class="logo-default img-responsive"/>
+			<a href="/dashboard">
+			<img src="/assets/frontend/onepage2/img/logo_default.png"  height="70" width="100" alt="logo" class="logo-default img-responsive" style="margin: 0px 0 0 0;"/>
 			</a>
 			<div class="menu-toggler sidebar-toggler hide">
 				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
@@ -322,7 +322,7 @@
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 					<img alt="" class="img-circle" src="/assets/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
-					Nick </span>
+					{{ Auth::user()->name }} </span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
@@ -353,8 +353,15 @@
 							<i class="icon-lock"></i> Lock Screen </a>
 						</li>
 						<li>
-							<a href="login.html">
-							<i class="icon-key"></i> Log Out </a>
+							<a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+
+                                        <i class="icon-key"></i> Log Out </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+
 						</li>
 					</ul>
 				</li>
