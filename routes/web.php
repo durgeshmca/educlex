@@ -13,6 +13,7 @@
 
 Route::get('/', 'Pages@main');//main page
 Route::get('/home', 'Pages@main');
+Route::get('/form/setting','FormSettingsController@index');
 Route::get('/form/{name?}', 'Pages@getForms');//get desired form
 Route::get('/course/get/{id?}', 'CoursesController@getCourse');//get desired course details
 Route::post('/workshop/submit', 'WrkshopController@submit');//submit worshop form
@@ -35,3 +36,6 @@ Route::get('/photos/{id}', 'PhotosController@show');
 Route::get('/dashboard', 'Dashboards@index')->middleware('auth');
 Route::get('/enquires/view/individual','EnquiresController@individualView');
 Route::get('/enquires/view/individual/{id}','EnquiresController@individualView');
+
+Route::get('/form/setting/{id}','FormSettingsController@show');
+Route::post('/form/setting/{id}/store','FormSettingsController@store');

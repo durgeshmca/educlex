@@ -39,7 +39,9 @@ $('#myModal').modal('show');
 @if(session('status'))
 $('#myModal').modal('show');
 @endif
+@if($formList[0]->status)
 $('#myModal').modal('show');
+@endif
 });
 function openForm(formid){
 var srcurl="/form/workshop";

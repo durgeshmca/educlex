@@ -48,7 +48,9 @@
                             data-speed="900"
                             data-start="2000"
                             data-easing="easeOutExpo">
+                          @if($formList[2]->status)
                             <a href="javascript:void(0);"  onclick="openForm(1);"class="btn-brd-white" data-toggle="modal" data-target='#myModal' data-backdrop="static">Workshop Form</a>
+                          @endif
                         </div>
 
 

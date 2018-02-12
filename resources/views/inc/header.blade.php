@@ -41,6 +41,16 @@
   background: url('/assets/images/tick.png') no-repeat 0px 10px;
   padding: 6px 0 0px 20px;
 }
+.modal-dialog {
+  position: center;
+  top: 50px;
+  right: 100px;
+  bottom: 0;
+  left: 0;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto;
+}
 </style>
 </head>
 <!-- END HEAD -->

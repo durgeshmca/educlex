@@ -93,6 +93,21 @@
           </li>
         </ul>
       </li>
+      <li>
+        <a href="/form/setting">
+        <i class="icon-settings"></i>
+        Form Settings</a>
+      </li>
+      <li>
+        <a href="/courses/list">
+        <i class="icon-diamond"></i>
+        Courses</a>
+      </li>
+      <li>
+        <a href="/projects/list">
+        <i class="icon-rocket"></i>
+        Projects</a>
+      </li>
     </ul>
     <!-- END SIDEBAR MENU -->
   </div>
