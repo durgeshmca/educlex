@@ -29,7 +29,7 @@
         </form>
         <!-- END RESPONSIVE QUICK SEARCH FORM -->
       </li>
-      <li class="active">
+      <li class="">
         <a href="/dashboard">
         <i class="icon-home"></i>
         <span class="title">Dashboard</span>
@@ -98,11 +98,25 @@
         <i class="icon-settings"></i>
         Form Settings</a>
       </li>
-      <li>
-        <a href="/courses/list">
-        <i class="icon-diamond"></i>
-        Courses</a>
-      </li>
+      <li class="start ">
+        <a href="javascript:;">
+        <i class="icon-handbag"></i>
+        <span class="title">Courses</span>
+        <span class="arrow "></span>
+        </a>
+        <ul class="sub-menu">
+        <li>
+          <a href="/courses/list">
+          <i class="icon-diamond"></i>
+          Courses List</a>
+        </li>
+        <li>
+          <a href="/courses/create">
+          <i class="icon-pencil"></i>
+          Create New Course</a>
+        </li>
+      </ul>
+    </li>
       <li>
         <a href="/projects/list">
         <i class="icon-rocket"></i>

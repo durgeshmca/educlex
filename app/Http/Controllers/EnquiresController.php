@@ -12,12 +12,14 @@ class EnquiresController extends Controller
     }
     public function individualView($id='')
     {
-      if(empty($value)){
+      if(empty($id)){
         $workshops = WorkshopEnquiry::orderBy('created_at','desc')->paginate(10);
+        return view('admin.enquiries.workshop',['workshops'=>$workshops]);
       } else {
         $workshops = WorkshopEnquiry::find($id);
+        return view('admin.enquiries.view',['forms'=>$workshops]);
       }
-      return view('admin.enquiries.workshop',['workshops'=>$workshops]);
+
     }
     public function individualDelete($value='')
     {

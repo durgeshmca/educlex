@@ -39,3 +39,9 @@ Route::get('/enquires/view/individual/{id}','EnquiresController@individualView')
 
 Route::get('/form/setting/{id}','FormSettingsController@show');
 Route::post('/form/setting/{id}/store','FormSettingsController@store');
+Route::get('/courses/list','CoursesController@courseList');
+Route::post('/courses/list/{id}/store','CoursesController@store');
+Route::get('/courses/list/{id}','CoursesController@courseList');
+Route::get('/courses/create','CoursesController@create');
+Route::post('/courses/add','CoursesController@store');
+Route::delete('/courses/delete/{id}','CoursesController@destroy');

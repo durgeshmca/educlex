@@ -3,25 +3,25 @@
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
   <div class="page-content">
-    
+
 
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
-    Create  <small>New Album</small>
+    View  <small>Enquiry</small>
     </h3>
     <div class="page-bar">
       <ul class="page-breadcrumb">
         <li>
           <i class="fa fa-home"></i>
-          <a href="index.html">Home</a>
+          <a href="/dashboard">Home</a>
           <i class="fa fa-angle-right"></i>
         </li>
         <li>
-          <a href="#">Form</a>
+          <a href="#">Enquiries</a>
           <i class="fa fa-angle-right"></i>
         </li>
         <li>
-          <a href="#">Setting</a>
+          <a href="/enquires/view/individual">View</a>
         </li>
       </ul>
 
@@ -34,7 +34,7 @@
           <ul class="nav nav-tabs">
             <li class="active">
               <a href="#tab_0" data-toggle="tab">
-            Form</a>
+            Enquiry</a>
             </li>
 
           </ul>
@@ -43,7 +43,7 @@
               <div class="portlet box green">
                 <div class="portlet-title">
                   <div class="caption">
-                    <i class="fa fa-gift"></i>Setting
+                    <i class="fa fa-gift"></i>View
                   </div>
                   <div class="tools">
                     <a href="javascript:;" class="collapse">
@@ -59,51 +59,89 @@
 
                 <div class="portlet-body form">
                     @include('admin.inc.messages')
-                    @if(count($settings)==1)
-                  <!-- BEGIN FORM-->
-                  <form action="/form/setting/{{$settings->id}}/store" class="form-horizontal"  method="post" >
-                    {{csrf_field()}}
+                    @if(count($forms)==1)
+
                     <div class="form-body">
                       <div class="form-group">
-                        <label class="col-md-3 control-label">Form Name</label>
+                        <label class="col-md-3 control-label">Enquiry Type</label>
                         <div class="col-md-4">
-                          <label class="form-control input-circle">{{$settings->form_name}}</label>
-
-
+                          <label class="form-control input-circle">{{$forms->enquiry_type}}</label>
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="col-md-3 control-label">Label</label>
+                        <label class="col-md-3 control-label">Name</label>
                         <div class="col-md-4">
                           <div class="input-group">
-                            <textarea name="link_label" rows="5" cols="80" class="form-control input-circle">{{$settings->link_label}}</textarea>
-
+                            <label class="form-control input-circle">{{$forms->fname.' '.$forms->lname}}</label>
                           </div>
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="col-md-3 control-label">Form Status</label>
+                        <label class="col-md-3 control-label">Email</label>
                         <div class="col-md-4">
-                          <div class="radio-list">
-												<label class="radio-inline">
-												<div class="radio"><input type="radio" name="status" id="optionsRadios25" value="0" <?php if($settings->status==0){ echo "checked='checked'";} ?>></div> Hide </label>
-												<label class="radio-inline">
-												<div class="radio" ><input type="radio" name="status" id="optionsRadios26" value="1" <?php if($settings->status){ echo "checked='checked'";} ?>></div> Show </label>
-
-											</div>
-
+                          <label class="form-control input-circle">{{$forms->email}}</label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-3 control-label">Contact No.</label>
+                        <div class="col-md-4">
+                          <label class="form-control input-circle">{{$forms->contact}}</label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-3 control-label">Address</label>
+                        <div class="col-md-4">
+                          <label class="form-control input-circle">{{$forms->addres}}</label>
+                          <label class="form-control input-circle">{{$forms->landmark}}</label>
+                          <label class="form-control input-circle">{{$forms->city}}</label>
+                          <label class="form-control input-circle">{{$forms->state}}</label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-3 control-label">Category</label>
+                        <div class="col-md-4">
+                          <label class="form-control input-circle">{{$forms->category}}</label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-3 control-label">Highest Qualification</label>
+                        <div class="col-md-4">
+                          <label class="form-control input-circle">{{$forms->qualification.' '.$forms->year_sem}}</label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-3 control-label">Designation</label>
+                        <div class="col-md-4">
+                          <label class="form-control input-circle">{{$forms->Designation}}</label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-3 control-label">Company / College </label>
+                        <div class="col-md-4">
+                          <label class="form-control input-circle">{{$forms->company}}{{$forms->college}}</label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-3 control-label">Interested In</label>
+                        <div class="col-md-4">
+                          <label class="form-control input-circle">{{$forms->interest}}</label>
                         </div>
                       </div>
 
                     <div class="form-actions">
                       <div class="row">
                         <div class="col-md-offset-3 col-md-9">
-                          <button type="submit" class="btn btn-circle blue">Update</button>
+                          <form class="" action="/enquiries/individual/{{$forms->id}}" method="post">
+                            {{csrf_field()}}
+                            <input type="hidden" name="_method" value="delete">
+                              <button type="submit" class="btn btn-circle blue">Delete</button>
+                          </form>
+
 
                         </div>
                       </div>
                     </div>
-                  </form>
+                
                   <!-- END FORM-->
                   @else
                   <table class="table table-bordered table-striped">

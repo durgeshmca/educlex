@@ -1,24 +1,26 @@
+@extends('layouts.admin')
+@section('content')
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
   <div class="page-content">
-    
+  
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
-    Create  <small>New Album</small>
+    Courses  <small>Settings</small>
     </h3>
     <div class="page-bar">
       <ul class="page-breadcrumb">
         <li>
           <i class="fa fa-home"></i>
-          <a href="index.html">Home</a>
+          <a href="/dashboard">Home</a>
           <i class="fa fa-angle-right"></i>
         </li>
         <li>
-          <a href="#">Album</a>
+          <a href="#">Courses</a>
           <i class="fa fa-angle-right"></i>
         </li>
         <li>
-          <a href="#">New Album</a>
+          <a href="#">Setting</a>
         </li>
       </ul>
 
@@ -31,7 +33,7 @@
           <ul class="nav nav-tabs">
             <li class="active">
               <a href="#tab_0" data-toggle="tab">
-              Albums </a>
+            Courses</a>
             </li>
 
           </ul>
@@ -40,7 +42,7 @@
               <div class="portlet box green">
                 <div class="portlet-title">
                   <div class="caption">
-                    <i class="fa fa-gift"></i>Add New Album
+                    <i class="fa fa-gift"></i>Settings
                   </div>
                   <div class="tools">
                     <a href="javascript:;" class="collapse">
@@ -57,33 +59,32 @@
                 <div class="portlet-body form">
                     @include('admin.inc.messages')
                   <!-- BEGIN FORM-->
-                  <form action="/albums/store" class="form-horizontal"  method="post" enctype="multipart/form-data">
+                  <form action="/courses/add" class="form-horizontal"  method="post" >
                     {{csrf_field()}}
                     <div class="form-body">
                       <div class="form-group">
-                        <label class="col-md-3 control-label">Album Name</label>
+                        <label class="col-md-3 control-label">Course Name</label>
                         <div class="col-md-4">
-                          <input type="text" class="form-control input-circle" placeholder="Enter Album Name Here" name="name">
+                        <input type="text" name="course" value="{{ old('course') }}" class="form-control input-circle">
+
 
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="col-md-3 control-label">Description</label>
+                        <label class="col-md-3 control-label">Course Description</label>
                         <div class="col-md-4">
                           <div class="input-group">
-                            <textarea name="description" rows="5" cols="80" class="form-control input-circle"></textarea>
+                            <textarea name="desc" rows="2" cols="80" class="form-control input-circle">{{ old('desc') }}</textarea>
 
                           </div>
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="col-md-3 control-label">Cover Photo</label>
+                        <label class="col-md-3 control-label">Course Details</label>
                         <div class="col-md-4">
                           <div class="input-group">
-                            <input type="file" class="form-control input-circle-left" placeholder="Cover Image" name="cover_image" accept="image/jpeg,image/gif,image/x-png">
-                            <span class="input-group-addon input-circle-right">
-                            <i class="fa fa-user"></i>
-                            </span>
+                            <textarea name="content" rows="20" cols="80" class="form-control input-circle">{{ old('content') }}</textarea>
+
                           </div>
                         </div>
                       </div>
@@ -91,14 +92,16 @@
                     <div class="form-actions">
                       <div class="row">
                         <div class="col-md-offset-3 col-md-9">
-                          <button type="submit" class="btn btn-circle blue">Create</button>
-                          <button type="reset" class="btn btn-circle default">Reset</button>
+                          <button type="submit" class="btn btn-circle blue">Add Course</button>
+
                         </div>
                       </div>
                     </div>
                   </form>
                   <!-- END FORM-->
-                </div>
+                  <br>
+                  <br>
+
               </div>
 
                       <!-- END FORM-->
@@ -116,3 +119,4 @@
   </div>
 </div>
 <!-- END CONTENT -->
+@endsection

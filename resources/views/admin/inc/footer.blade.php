@@ -3,7 +3,7 @@
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
 	<div class="page-footer-inner">
-		 2018 &copy; Educlex By Verclex Network Pvt Ltd. 
+		 2018 &copy; Educlex By Verclex Network Pvt Ltd.
 	</div>
 	<div class="scroll-to-top">
 		<i class="icon-arrow-up"></i>
@@ -44,6 +44,31 @@ Layout.init(); // init current layout
 QuickSidebar.init(); // init quick sidebar
 Demo.init(); // init demo features
    FormSamples.init();
+
+	 @if(count($errors) > 0)
+	 <?php $err='';?>
+	   @foreach($errors->all() as $error)
+	   <?php $err.=$error.'\n';?>
+	   @endforeach
+	   $('#modal-title').html('Error');
+		 var error = "<div class= 'alert alert-danger'> {{$err}}</div>";
+	   $('#modal-body').html(error);
+	   $("#portlet-config").modal('show');
+	 @endif
+
+	 @if(session('success'))
+	   $('#modal-title').html('Success');
+		 var succ = "<div class= 'alert alert-success'> {{session('success')}}</div>";
+	    $('#modal-body').html(succ);
+			$("#portlet-config").modal('show');
+	 @endif
+
+	 @if(session('error'))
+	 $('#modal-title').html('Error');
+	 var error = "<div class= 'alert alert-danger'>{{session('error')}}</div>";
+		$('#modal-body').html(error);
+		$("#portlet-config").modal('show');
+	 @endif
 });
 function openAlbum(cid){
 var srcurl="/albums";
