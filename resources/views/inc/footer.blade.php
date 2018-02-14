@@ -42,6 +42,7 @@ $('#myModal').modal('show');
 @if($formList[0]->status)
 $('#myModal').modal('show');
 @endif
+
 });
 function openForm(formid){
 var srcurl="/form/workshop";
@@ -153,6 +154,11 @@ var srcurl="/photos/"+cid;
 
     });
 }
+</script>
+<script>
+$(function(){
+
+})
 </script>
 <!-- END JAVASCRIPTS -->
 </body>

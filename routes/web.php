@@ -34,9 +34,9 @@ Route::get('/photos/create/{id}', 'PhotosController@create')->middleware('auth')
 Route::post('/photos/store', 'PhotosController@store')->middleware('auth');
 Route::get('/photos/{id}', 'PhotosController@show');
 Route::get('/dashboard', 'Dashboards@index')->middleware('auth');
-Route::get('/enquires/view/individual','EnquiresController@individualView');
-Route::get('/enquires/view/individual/{id}','EnquiresController@individualView');
-
+Route::get('/enquiries/view/individual','EnquiresController@individualView');
+Route::get('/enquiries/view/individual/{id}','EnquiresController@individualView');
+Route::delete('/enquiries/individual/{id}','EnquiresController@destroy');
 Route::get('/form/setting/{id}','FormSettingsController@show');
 Route::post('/form/setting/{id}/store','FormSettingsController@store');
 Route::get('/courses/list','CoursesController@courseList');
@@ -45,3 +45,4 @@ Route::get('/courses/list/{id}','CoursesController@courseList');
 Route::get('/courses/create','CoursesController@create');
 Route::post('/courses/add','CoursesController@store');
 Route::delete('/courses/delete/{id}','CoursesController@destroy');
+Route::post('/images','ImagesController@index');

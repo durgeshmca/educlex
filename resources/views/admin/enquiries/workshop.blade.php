@@ -84,7 +84,7 @@
 							@foreach($workshops as $workshop)
 							<tr>
 								<td>
-									 {{$workshop->fname}}&nbsp;{{$workshop->lname}}
+									<a href="/enquiries/view/individual/{{$workshop->id}}"> {{$workshop->fname}}&nbsp;{{$workshop->lname}}</a>
 								</td>
 								<td>
 									{{$workshop->email}}

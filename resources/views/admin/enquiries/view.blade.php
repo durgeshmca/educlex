@@ -7,13 +7,13 @@
 
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
-    View  <small>Enquiry</small>
+    Create  <small>New Album</small>
     </h3>
     <div class="page-bar">
       <ul class="page-breadcrumb">
         <li>
           <i class="fa fa-home"></i>
-          <a href="/dashboard">Home</a>
+          <a href="index.html">Home</a>
           <i class="fa fa-angle-right"></i>
         </li>
         <li>
@@ -21,7 +21,7 @@
           <i class="fa fa-angle-right"></i>
         </li>
         <li>
-          <a href="/enquires/view/individual">View</a>
+          <a href="#">View</a>
         </li>
       </ul>
 
@@ -58,138 +58,136 @@
                 </div>
 
                 <div class="portlet-body form">
-                    @include('admin.inc.messages')
-                    @if(count($forms)==1)
-
-                    <div class="form-body">
-                      <div class="form-group">
-                        <label class="col-md-3 control-label">Enquiry Type</label>
-                        <div class="col-md-4">
-                          <label class="form-control input-circle">{{$forms->enquiry_type}}</label>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-md-3 control-label">Name</label>
-                        <div class="col-md-4">
-                          <div class="input-group">
-                            <label class="form-control input-circle">{{$forms->fname.' '.$forms->lname}}</label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-md-3 control-label">Email</label>
-                        <div class="col-md-4">
-                          <label class="form-control input-circle">{{$forms->email}}</label>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-md-3 control-label">Contact No.</label>
-                        <div class="col-md-4">
-                          <label class="form-control input-circle">{{$forms->contact}}</label>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-md-3 control-label">Address</label>
-                        <div class="col-md-4">
-                          <label class="form-control input-circle">{{$forms->addres}}</label>
-                          <label class="form-control input-circle">{{$forms->landmark}}</label>
-                          <label class="form-control input-circle">{{$forms->city}}</label>
-                          <label class="form-control input-circle">{{$forms->state}}</label>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-md-3 control-label">Category</label>
-                        <div class="col-md-4">
-                          <label class="form-control input-circle">{{$forms->category}}</label>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-md-3 control-label">Highest Qualification</label>
-                        <div class="col-md-4">
-                          <label class="form-control input-circle">{{$forms->qualification.' '.$forms->year_sem}}</label>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-md-3 control-label">Designation</label>
-                        <div class="col-md-4">
-                          <label class="form-control input-circle">{{$forms->Designation}}</label>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-md-3 control-label">Company / College </label>
-                        <div class="col-md-4">
-                          <label class="form-control input-circle">{{$forms->company}}{{$forms->college}}</label>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-md-3 control-label">Interested In</label>
-                        <div class="col-md-4">
-                          <label class="form-control input-circle">{{$forms->interest}}</label>
-                        </div>
-                      </div>
-
-                    <div class="form-actions">
-                      <div class="row">
-                        <div class="col-md-offset-3 col-md-9">
-                          <form class="" action="/enquiries/individual/{{$forms->id}}" method="post">
-                            {{csrf_field()}}
-                            <input type="hidden" name="_method" value="delete">
-                              <button type="submit" class="btn btn-circle blue">Delete</button>
-                          </form>
+                      @if(count($forms)>0)
 
 
-                        </div>
-                      </div>
-                    </div>
-                
-                  <!-- END FORM-->
-                  @else
                   <table class="table table-bordered table-striped">
 													<thead>
 													<tr>
 														<th>
-															 Form Name
+															Field
 														</th>
 														<th>
-															 Label
+															 Value
 														</th>
-														<th>
-															 Status
-														</th>
-														<th>
-															 Change
-														</th>
+
 														</tr>
 													</thead>
 													<tbody>
-                            @foreach($settings as $form)
+                            <tr>
+  														<th>
+  															<span class="font-blue">Image</span>
+  															</i>
+  														</th>
+  														<td >
+                                <div class="thumbnail col-sm-3" id='responseImage'>
+
+                                </div>
+  														</td>
+                            </tr>
                           <tr>
+														<th>
+															<span class="font-blue">Enquiry Type</span>
+														</th>
 														<td>
-															<span class="font-blue">{{$form->form_name}}</span>
-														</td>
-														<td>
-                              <span class="font-blue">{{$form->link_label}}</span>
-															<i class="fa fa-user font-blue">
-															</i>
-														</td>
-														<td>
-                              <span class="font-blue"><?php if ($form->status): ?>
-                                Shown
-                              <?php else: ?>
-                                Hidden
-                              <?php endif; ?></span>
-															<i class="icon-pin font-blue">
-															</i>
-														</td>
-														<td>
-															<a href="/form/setting/{{$form->id}}" ><i class="glyphicon glyphicon-cog font-blue">
-															</i></a>
+                              <span class="font-blue">{{$forms->enquiry_type}}</span>
 														</td>
                           </tr>
-                          @endforeach
+                          <tr>
+														<th>
+															<span class="font-blue">Name</span>
+															</i>
+														</th>
+														<td>
+                              <span class="font-blue">{{$forms->fname.' '.$forms->lname}}</span>
+														</td>
+                          </tr>
+                          <tr>
+														<th>
+															<span class="font-blue">Email</span>
+														</th>
+														<td>
+                              <span class="font-blue">{{$forms->email}}</span>
+														</td>
+                          </tr>
+                          <tr>
+														<th>
+															<span class="font-blue">Contact No.</span>
+															</i>
+														</th>
+														<td>
+                              <span class="font-blue">{{$forms->contact}}</span>
+														</td>
+                          </tr>
+                          <tr>
+														<th>
+															<span class="font-blue">Address</span>
+														</th>
+														<td>
+                              <span class="font-blue">{{$forms->addres}}</span>
+                              <span class="font-blue">{{$forms->landmark}}</span>
+                              <span class="font-blue">{{$forms->city}}</span>
+                              <span class="font-blue">{{$forms->state}}</span>
+														</td>
+                          </tr>
+                          <tr>
+														<th>
+															<span class="font-blue">Category</span>
+															</i>
+														</th>
+														<td>
+                              <span class="font-blue">{{$forms->category}}</span>
+														</td>
+                          </tr>
+                          <tr>
+														<th>
+															<span class="font-blue">Highest Qualification</span>
+														</th>
+														<td>
+                              <span class="font-blue">{{$forms->qualification.' '.$forms->year_sem}}</span>
+														</td>
+                          </tr>
+                          <tr>
+														<th>
+															<span class="font-blue">Designation</span>
+															</i>
+														</th>
+														<td>
+                              <span class="font-blue">{{$forms->Designation}}</span>
+														</td>
+                          </tr>
+                          <tr>
+														<th>
+															<span class="font-blue">Company / College</span>
+														</th>
+														<td>
+                              <span class="font-blue">{{$forms->company}}{{$forms->college}}</span>
+														</td>
+                          </tr>
+                          <tr>
+														<th>
+															<span class="font-blue">Interested In</span>
+															</i>
+														</th>
+														<td>
+                              <span class="font-blue">{{$forms->interests}}</span>
+														</td>
+                          </tr>
 													</tbody>
 													</table>
+                          <div class="form-actions">
+                            <div class="row">
+                              <div class="col-md-offset-3 col-md-9">
+                                <form class="" action="/enquiries/individual/{{$forms->id}}" method="post">
+                                  {{csrf_field()}}
+                                  <input type="hidden" name="_method" value="delete">
+                                    <button type="submit" class="btn btn-circle red">Delete</button>
+                                </form>
 
+
+                              </div>
+                            </div>
+                          </div>
                   @endif
                   <br>
                   <br>

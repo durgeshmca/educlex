@@ -67,7 +67,7 @@
         </a>
         <ul class="sub-menu">
           <li>
-            <a href="/enquires/view/individual">
+            <a href="/enquiries/view/individual">
             <i class="icon-bar-chart"></i>
             Individual</a>
           </li>

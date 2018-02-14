@@ -69,6 +69,16 @@ Demo.init(); // init demo features
 		$('#modal-body').html(error);
 		$("#portlet-config").modal('show');
 	 @endif
+	 @if(isset($forms))
+	 	 $.ajax({
+		 url : "/images",
+		 type : 'post',
+		 data : {path : '{{$forms->images}}' },
+		 success : function(data,result){
+					 $("#responseImage").html('<img src="data:;base64,'+data+'">');
+			 }});
+		@endif
+
 });
 function openAlbum(cid){
 var srcurl="/albums";

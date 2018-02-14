@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\WorkshopEnquiry;
+use Illuminate\Support\Facades\Storage;
 class EnquiresController extends Controller
 {
     public function __construct()
@@ -16,13 +17,16 @@ class EnquiresController extends Controller
         $workshops = WorkshopEnquiry::orderBy('created_at','desc')->paginate(10);
         return view('admin.enquiries.workshop',['workshops'=>$workshops]);
       } else {
-        $workshops = WorkshopEnquiry::find($id);
+        $workshops = WorkshopEnquiry::findOrFail($id);
         return view('admin.enquiries.view',['forms'=>$workshops]);
       }
 
     }
-    public function individualDelete($value='')
+    public function destroy($id)
     {
-      # code...
+       $wrks= WorkshopEnquiry::find($id);
+       Storage::delete($wrks->images);
+       $wrks->delete();
+       return redirect('/enquiries/view/individual')->with('success','Enquiry Deleted Successfully');
     }
 }
