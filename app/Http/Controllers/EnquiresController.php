@@ -8,6 +8,7 @@ use App\CollegeWrokshop;
 use App\Corporate;
 use App\IndustrialTraining;
 use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
 class EnquiresController extends Controller
 {
     public function __construct()
@@ -94,5 +95,51 @@ class EnquiresController extends Controller
        Storage::delete($imagesArray);
        $wrks->delete();
        return redirect('/enquiries/view/college')->with('success','Enquiry Deleted Successfully');
+    }
+    public function export($model)
+    {
+      switch ($model) {
+        case 'individual' :
+        Excel::create('enquiry', function($excel){
+        $excel->sheet('enquiry_list', function($sheet) {
+        $data = WorkshopEnquiry::orderBy('created_at','desc')->get();
+        $sheet->fromModel($data);
+        });
+
+      })->download('xlsx');
+          break;
+       case 'corporate':
+            Excel::create('enquiry', function($excel){
+            $excel->sheet('enquiry_list', function($sheet) {
+            $data = Corporate::orderBy('created_at','desc')->get();
+            $sheet->fromModel($data);
+       });
+       })->download('xlsx');
+
+            break;
+      case 'industrial':
+                Excel::create('enquiry', function($excel){
+                $excel->sheet('enquiry_list', function($sheet) {
+                $data = IndustrialTraining::orderBy('created_at','desc')->get();
+                $sheet->fromModel($data);
+                });
+                })->download('xlsx');
+
+            break;
+      case 'college':
+              Excel::create('enquiry', function($excel){
+              $excel->sheet('enquiry_list', function($sheet) {
+              $data = CollegeWrokshop::orderBy('created_at','desc')->get();
+              $sheet->fromModel($data);
+              });
+              })->download('xlsx');
+
+            break;
+        default:
+          return response('Not Found');
+          break;
+      }
+
+
     }
 }

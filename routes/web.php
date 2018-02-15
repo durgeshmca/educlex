@@ -62,3 +62,6 @@ Route::delete('/enquiries/college/{id}','EnquiresController@destroyCollege');
 Route::get('/enquiries/view/contact','Contacts@show');
 Route::get('/enquiries/view/contact/{id}','Contacts@show');
 Route::delete('/enquiries/contact/{id}','Contacts@destroy');
+
+Route::get('/export/{model}','EnquiresController@export');
+Route::get('/contact/export','Contacts@export');

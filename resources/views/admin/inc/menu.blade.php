@@ -84,11 +84,11 @@
           </li>
           <li>
             <a href="/enquiries/view/college">
-            <i class="icon-mail"></i>
+            <i class="icon-calender"></i>
             College Workshops</a>
           </li>
           <li >
-            <a href="/enquiries/view/college">
+            <a href="/enquiries/view/contact">
             <i class="icon-bulb"></i>
             Contact Enquiries</a>
           </li>

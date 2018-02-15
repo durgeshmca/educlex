@@ -5,7 +5,7 @@ use App\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\WorkshopMail;
-
+use Maatwebsite\Excel\Facades\Excel;
 class Contacts extends Controller
 {
     public function submit(Request $request)
@@ -48,4 +48,15 @@ class Contacts extends Controller
        $wrks= Contact::destroy($id);
        return redirect('/enquiries/view/contact')->with('success','Contact Enquiry Deleted Successfully');
     }
+    //function to export contact listed
+    public function export()
+    {
+      Excel::create('ContactUs', function($excel){
+      $excel->sheet('contact', function($sheet) {
+      $data = Contact::orderBy('created_at','desc')->get();
+      $sheet->fromModel($data);
+      });
+      })->download('xlsx');
+
+}
 }

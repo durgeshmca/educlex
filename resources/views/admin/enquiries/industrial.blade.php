@@ -20,7 +20,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="/enquires/view/individual">Industrial</a>
+						<a href="/enquires/view/industrial">Industrial</a>
 					</li>
 				</ul>
 
@@ -37,13 +37,8 @@
 								<i class="fa fa-cogs"></i>Industrial WorkShop Enquiries
 							</div>
 							<div class="tools">
-								<a href="javascript:;" class="collapse" data-original-title="" title="">
-								</a>
-								<a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title="">
-								</a>
-								<a href="javascript:;" class="reload" data-original-title="" title="">
-								</a>
-								<a href="javascript:;" class="remove" data-original-title="" title="">
+								<a href="/export/industrial"  class="" data-original-title="" title="Export to excel">
+									<i class="fa fa-file-excel-o" style="font-size:36px;color:green"></i>
 								</a>
 							</div>
 						</div>
