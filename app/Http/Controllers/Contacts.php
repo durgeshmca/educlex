@@ -31,4 +31,21 @@ class Contacts extends Controller
         return redirect('/#contact')->with('status', 'Sorry !!.Due to some technical error .We are unable to recieve your queries.');
       }
     }
+    public function show($id='')
+    {
+      if(empty($id)){
+        $contacts = Contact::orderBy('created_at','desc')->paginate(10);
+        return view('admin.enquiries.contact',['contacts'=>$contacts]);
+      } else {
+        $contacts = Contact::findOrFail($id);
+        return view('admin.enquiries.view_contact',['contacts'=>$contacts,'type'=>'multiple']);
+      }
+
+    }
+    //industrial delete
+    public function destroy($id)
+    {
+       $wrks= Contact::destroy($id);
+       return redirect('/enquiries/view/contact')->with('success','Contact Enquiry Deleted Successfully');
+    }
 }

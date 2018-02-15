@@ -6,7 +6,7 @@
 
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			Workshop  <small>Enquies</small>
+			Industrial Workshop  <small>Enquies</small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -20,7 +20,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="/enquires/view/individual">Individual</a>
+						<a href="/enquires/view/individual">Industrial</a>
 					</li>
 				</ul>
 
@@ -29,12 +29,12 @@
 			<!-- BEGIN PAGE CONTENT-->
 			<div class="row">
 				<div class="col-md-12">
-{{$workshops->links()}}
+{{$industrial->links()}}
 					<!-- BEGIN SAMPLE TABLE PORTLET-->
 					<div class="portlet box green">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-cogs"></i>Work Shop Enquiries
+								<i class="fa fa-cogs"></i>Industrial WorkShop Enquiries
 							</div>
 							<div class="tools">
 								<a href="javascript:;" class="collapse" data-original-title="" title="">
@@ -64,17 +64,18 @@
 								<th >
 									 Address
 								</th>
-								<th>
-									 Category
-								</th>
+
 								<th>
 									 Qualification
 								</th>
-								<th>
-									 Designation
+                <th>
+									Year/Sem
 								</th>
 								<th>
-									Company / College
+									College
+								</th>
+                <th>
+									Interests
 								</th>
 								<th>
 									 Date & Time
@@ -82,10 +83,10 @@
 							</tr>
 							</thead>
 							<tbody>
-							@foreach($workshops as $workshop)
+							@foreach($industrial as $workshop)
 							<tr>
 								<td>
-									<a href="/enquiries/view/individual/{{$workshop->id}}"> {{$workshop->fname}}&nbsp;{{$workshop->lname}}</a>
+									<a href="/enquiries/view/industrial/{{$workshop->id}}"> {{$workshop->fname}}&nbsp;{{$workshop->lname}}</a>
 								</td>
 								<td>
 									{{$workshop->email}}
@@ -94,19 +95,20 @@
 									{{$workshop->contact}}
 								</td>
 								<td>
-									 {{$workshop->addres}}&nbsp;{{$workshop->landmark}}&nbsp;{{$workshop->city}}&nbsp;{{$workshop->state}}
+									 {{$workshop->address}}&nbsp;{{$workshop->landmark}}&nbsp;{{$workshop->city}}&nbsp;{{$workshop->state}}
 								</td>
+
 								<td>
-									{{$workshop->category}}
-								</td>
-								<td>
-									{{$workshop->qualification}}&nbsp;{{$workshop->year_sem}}
+									{{$workshop->qualification}}&nbsp;
 								</td>
 								<td >
-									 {{$workshop->Designation}}
+									 {{$workshop->year_sem}}
 								</td>
 								<td >
-									 {{$workshop->company}}&nbsp;{{$workshop->college}}
+									 {{$workshop->college}}
+								</td>
+                <td >
+									 {{$workshop->interests}}
 								</td>
 								<td>
 									 {{date('d M y h:i:s A',strtotime($workshop->created_at))}}
@@ -120,7 +122,7 @@
 					</div>
 					<!-- END SAMPLE TABLE PORTLET-->
 <div class="pull-right">
- {{$workshops->links()}}
+ {{$industrial->links()}}
 </div>
 				</div>
 			</div>

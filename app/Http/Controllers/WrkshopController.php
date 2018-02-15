@@ -176,5 +176,64 @@ class WrkshopController extends Controller
           return redirect('/#about')->with('status','Your Industrial Training Enquiry failed. Please try after sometimes.');
       }
     }
+//for corporate Training
+  public function submitCorporateTraining(Request $request)
+  {
+    $this->validate($request,[
+      'fname'=>'required',
+      'email'=>'required|email',
+      'contact'=>'required|min:10|max:13',
+      'address'=>'required',
+      'company'=>'required',
+      'designation'=>'required',
+      'landmark'=>'required',
+      'city'=>'required',
+      'total_students'=>'required',
+      'payment_mode'=>'required',
+      'interest'=>'required',
+      'collegeimg.0'=>'required|mimes:jpeg,gif,png|max:3145728',
+      'collegeimg.1'=>'required|mimes:jpeg,gif,png|max:3145728',
+      'collegeimg.2'=>'required|mimes:jpeg,gif,png|max:3145728'
+    ],
+    [
+      'collegeimg.0.required'=>'Please upload at least three images less than 3 MB',
+      'collegeimg.1.required'=>'Please upload at least three images less than 3 MB',
+      'collegeimg.2.required'=>'Please upload at least three images less than 3 MB'
+    ]
+  );
+    //validate and upload files
+    if ($request->file('collegeimg.0')->isValid() AND $request->file('collegeimg.1')->isValid() AND $request->file('collegeimg.2')->isValid()) {
+      $path1=$request->file('collegeimg.0')->store('uploads.corporates');
+      $path2=$request->file('collegeimg.1')->store('uploads.corporates');
+      $path3=$request->file('collegeimg.2')->store('uploads.corporates');
+      $path=$path1.','.$path2.','.$path3;
+    } else {
+      $this->validate()->errors()->add('collegeimg.0','Images could not be uploaded.');
+    }
 
+
+    $colworksh=new Corporate();
+    $colworksh->fname = $request->fname;
+    $colworksh->lname = $request->lname;
+    $colworksh->email = $request->email;
+    $colworksh->contact = $request->contact;
+    $colworksh->address = $request->address;
+    $colworksh->state = $request->state;
+    $colworksh->city = $request->city;
+    $colworksh->company = $request->company;
+    $colworksh->landmark = $request->landmark;
+    $colworksh->total_candidates = $request->total_students;
+    $colworksh->payment_mode = $request->payment_mode;
+    $colworksh->images = $path;
+    $colworksh->interests = implode(',',$request->interest);
+    if($colworksh->save())
+    {
+      Mail::to($request->email)->send(new WorkshopMail($request));
+      return redirect('/#about')->with('status','Your Corporate Workshop Enquiry has been saved We shall get back to you soon');
+    }
+    else
+      {
+        return redirect('/#about')->with('status','Your Corporate Workshop Enquiry failed. Please try after sometimes.');
+    }
+  }
 }

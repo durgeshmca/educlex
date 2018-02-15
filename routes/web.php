@@ -46,3 +46,19 @@ Route::get('/courses/create','CoursesController@create');
 Route::post('/courses/add','CoursesController@store');
 Route::delete('/courses/delete/{id}','CoursesController@destroy');
 Route::post('/images','ImagesController@index');
+//for corporates
+Route::get('/enquiries/view/corporate','EnquiresController@corporateView');
+Route::get('/enquiries/view/corporate/{id}','EnquiresController@corporateView');
+Route::delete('/enquiries/corporate/{id}','EnquiresController@destroyCorporate');
+//for industrial enquiries
+Route::get('/enquiries/view/industrial','EnquiresController@industrialView');
+Route::get('/enquiries/view/industrial/{id}','EnquiresController@industrialView');
+Route::delete('/enquiries/industrial/{id}','EnquiresController@destroyindustrial');
+//for college workshop enquiries
+Route::get('/enquiries/view/college','EnquiresController@collegeView');
+Route::get('/enquiries/view/college/{id}','EnquiresController@collegeView');
+Route::delete('/enquiries/college/{id}','EnquiresController@destroyCollege');
+//for contact us enquiries
+Route::get('/enquiries/view/contact','Contacts@show');
+Route::get('/enquiries/view/contact/{id}','Contacts@show');
+Route::delete('/enquiries/contact/{id}','Contacts@destroy');

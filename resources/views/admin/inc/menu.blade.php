@@ -69,27 +69,28 @@
           <li>
             <a href="/enquiries/view/individual">
             <i class="icon-bar-chart"></i>
-            Individual</a>
+            Individual/Classroom</a>
           </li>
-          <li >
-            <a href="#">
-            <i class="icon-bulb"></i>
-            Class Room</a>
-          </li>
+
           <li>
-            <a href="#">
+            <a href="/enquiries/view/corporate">
             <i class="icon-graph"></i>
             Corporate</a>
           </li>
           <li>
-            <a href="#">
+            <a href="/enquiries/view/industrial">
             <i class="icon-graph"></i>
             Industrial</a>
           </li>
           <li>
-            <a href="#">
-            <i class="icon-graph"></i>
+            <a href="/enquiries/view/college">
+            <i class="icon-mail"></i>
             College Workshops</a>
+          </li>
+          <li >
+            <a href="/enquiries/view/college">
+            <i class="icon-bulb"></i>
+            Contact Enquiries</a>
           </li>
         </ul>
       </li>

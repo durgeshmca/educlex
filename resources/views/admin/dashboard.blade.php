@@ -1,9 +1,10 @@
 @extends('layouts.admin')
 @section('content')
+@include('admin.inc.messages')
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
 		<div class="page-content">
-			
+
 			<!-- BEGIN PAGE HEADER-->
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -63,7 +64,7 @@
 								 College Workshops
 							</div>
 						</div>
-						<a class="more" href="javascript:;">
+						<a class="more" href="/enquiries/view/college">
 						View more <i class="m-icon-swapright m-icon-white"></i>
 						</a>
 					</div>
@@ -85,7 +86,7 @@
 								 Industrial Trainings
 							</div>
 						</div>
-						<a class="more" href="javascript:;">
+						<a class="more" href="/enquiries/view/industrial">
 						View more <i class="m-icon-swapright m-icon-white"></i>
 						</a>
 					</div>
@@ -107,7 +108,7 @@
 								 Class Room Trainings
 							</div>
 						</div>
-						<a class="more" href="javascript:;">
+						<a class="more" href="/enquiries/view/individual">
 						View more <i class="m-icon-swapright m-icon-white"></i>
 						</a>
 					</div>
@@ -129,7 +130,7 @@
 								 Corporate Trainings
 							</div>
 						</div>
-						<a class="more" href="javascript:;">
+						<a class="more" href="/enquiries/view/corporate">
 						View more <i class="m-icon-swapright m-icon-white"></i>
 						</a>
 					</div>
@@ -151,7 +152,7 @@
 								 Contact Queries
 							</div>
 						</div>
-						<a class="more" href="javascript:;">
+						<a class="more" href="/enquiries/view/contact">
 						View more <i class="m-icon-swapright m-icon-white"></i>
 						</a>
 					</div>
@@ -173,7 +174,7 @@
 								 Contact Queries..
 							</div>
 						</div>
-						<a class="more" href="javascript:;">
+						<a class="more" href="/enquiries/view/contact">
 						View more <i class="m-icon-swapright m-icon-white"></i>
 						</a>
 					</div>

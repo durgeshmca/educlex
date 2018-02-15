@@ -7,7 +7,7 @@
 
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
-    Create  <small>New Album</small>
+    Corporate Enquiry  <small>View</small>
     </h3>
     <div class="page-bar">
       <ul class="page-breadcrumb">
@@ -21,7 +21,7 @@
           <i class="fa fa-angle-right"></i>
         </li>
         <li>
-          <a href="#">View</a>
+          <a href="#">Corporate</a>
         </li>
       </ul>
 
@@ -58,9 +58,9 @@
                 </div>
 
                 <div class="portlet-body form">
-                      @if(count($forms)>0)
-                        <?php $images =  $forms->images;?>
+                      @if(count($corporates)>0)
 
+                      <?php $images =  $corporates->images;?>
                   <table class="table table-bordered table-striped">
 													<thead>
 													<tr>
@@ -76,7 +76,7 @@
 													<tbody>
                             <tr>
   														<th>
-  															<span class="font-blue">Image</span>
+  															<span class="font-blue">Images</span>
   															</i>
   														</th>
   														<td >
@@ -85,21 +85,14 @@
                                 </div>
   														</td>
                             </tr>
-                          <tr>
-														<th>
-															<span class="font-blue">Enquiry Type</span>
-														</th>
-														<td>
-                              <span class="font-blue">{{$forms->enquiry_type}}</span>
-														</td>
-                          </tr>
+
                           <tr>
 														<th>
 															<span class="font-blue">Name</span>
 															</i>
 														</th>
 														<td>
-                              <span class="font-blue">{{$forms->fname.' '.$forms->lname}}</span>
+                              <span class="font-blue">{{$corporates->fname.' '.$corporates->lname}}</span>
 														</td>
                           </tr>
                           <tr>
@@ -107,7 +100,7 @@
 															<span class="font-blue">Email</span>
 														</th>
 														<td>
-                              <span class="font-blue">{{$forms->email}}</span>
+                              <span class="font-blue">{{$corporates->email}}</span>
 														</td>
                           </tr>
                           <tr>
@@ -116,35 +109,7 @@
 															</i>
 														</th>
 														<td>
-                              <span class="font-blue">{{$forms->contact}}</span>
-														</td>
-                          </tr>
-                          <tr>
-														<th>
-															<span class="font-blue">Address</span>
-														</th>
-														<td>
-                              <span class="font-blue">{{$forms->addres}}</span>
-                              <span class="font-blue">{{$forms->landmark}}</span>
-                              <span class="font-blue">{{$forms->city}}</span>
-                              <span class="font-blue">{{$forms->state}}</span>
-														</td>
-                          </tr>
-                          <tr>
-														<th>
-															<span class="font-blue">Category</span>
-															</i>
-														</th>
-														<td>
-                              <span class="font-blue">{{$forms->category}}</span>
-														</td>
-                          </tr>
-                          <tr>
-														<th>
-															<span class="font-blue">Highest Qualification</span>
-														</th>
-														<td>
-                              <span class="font-blue">{{$forms->qualification.' '.$forms->year_sem}}</span>
+                              <span class="font-blue">{{$corporates->contact}}</span>
 														</td>
                           </tr>
                           <tr>
@@ -153,15 +118,34 @@
 															</i>
 														</th>
 														<td>
-                              <span class="font-blue">{{$forms->Designation}}</span>
+                              <span class="font-blue">{{$corporates->designation}}</span>
 														</td>
                           </tr>
                           <tr>
 														<th>
-															<span class="font-blue">Company / College</span>
+															<span class="font-blue">Company</span>
 														</th>
 														<td>
-                              <span class="font-blue">{{$forms->company}}{{$forms->college}}</span>
+                              <span class="font-blue">{{$corporates->company}}</span>
+														</td>
+                          </tr>
+                          <tr>
+														<th>
+															<span class="font-blue">Address</span>
+														</th>
+														<td>
+                              <span class="font-blue">{{$corporates->addres}}</span>
+                              <span class="font-blue">{{$corporates->landmark}}</span>
+                              <span class="font-blue">{{$corporates->city}}</span>
+                              <span class="font-blue">{{$corporates->state}}</span>
+														</td>
+                          </tr>
+                          <tr>
+														<th>
+															<span class="font-blue">Total Candidates</span>
+														</th>
+														<td>
+                              <span class="font-blue">{{$corporates->total_candidates}}</span>
 														</td>
                           </tr>
                           <tr>
@@ -170,19 +154,39 @@
 															</i>
 														</th>
 														<td>
-                              <span class="font-blue">{{$forms->interests}}</span>
+                              <span class="font-blue">{{$corporates->interests}}</span>
 														</td>
                           </tr>
+                          <tr>
+														<th>
+															<span class="font-blue">Payment Mode</span>
+															</i>
+														</th>
+														<td>
+                              <span class="font-blue">{{$corporates->payment_mode}}</span>
+														</td>
+                          </tr>
+                          <tr>
+														<th>
+															<span class="font-blue">Enquiry Time</span>
+														</th>
+														<td>
+                              <span class="font-blue">{{date('d M Y h:i:s A',strtotime($corporates->created_at))}}</span>
+														</td>
+                          </tr>
+
+
+
 													</tbody>
 													</table>
                           <div class="form-actions">
                             <div class="row">
                               <div class="col-md-offset-3 col-md-9">
-                                <form class="" action="/enquiries/individual/{{$forms->id}}" method="post">
+                                <form class="" action="/enquiries/corporate/{{$corporates->id}}" method="post">
                                   {{csrf_field()}}
                                   <input type="hidden" name="_method" value="delete">
                                     <button type="submit" class="btn btn-circle red">Delete</button>&nbsp;
-                                    <a href="/enquiries/view/individual" class="btn btn-circle blue">Go Back</a>
+                                    <a href="/enquiries/view/corporate" class="btn btn-circle blue">Go Back</a>
                                 </form>
 
 
