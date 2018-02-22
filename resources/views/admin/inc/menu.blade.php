@@ -118,11 +118,26 @@
         </li>
       </ul>
     </li>
+        <li class="start ">
+          <a href="javascript:;">
+          <i class="fa fa-briefcase"></i>
+          <span class="title">Projects</span>
+          <span class="arrow "></span>
+          </a>
+
+      <ul class="sub-menu">
       <li>
         <a href="/projects/list">
-        <i class="icon-rocket"></i>
-        Projects</a>
+        <i class="icon-diamond"></i>
+        Project List</a>
       </li>
+      <li>
+        <a href="/projects/create">
+        <i class="icon-pencil"></i>
+        Create New Project</a>
+      </li>
+    </ul>
+    </li>
     </ul>
     <!-- END SIDEBAR MENU -->
   </div>

@@ -65,3 +65,11 @@ Route::delete('/enquiries/contact/{id}','Contacts@destroy');
 
 Route::get('/export/{model}','EnquiresController@export');
 Route::get('/contact/export','Contacts@export');
+//projetcs
+Route::get('/projects/get', 'CoursesController@getProject');//get desired course details
+Route::get('/projects/list','ProjectsController@projectList');
+Route::post('/projects/list/{id}/store','ProjectsController@store');
+Route::get('/projects/list/{id}','ProjectsController@projectList');
+Route::get('/projects/create','ProjectsController@create');
+Route::post('/projects/add','ProjectsController@store');
+Route::delete('/projects/delete/{id}','ProjectsController@destroy');
