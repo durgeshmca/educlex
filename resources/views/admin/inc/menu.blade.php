@@ -97,8 +97,9 @@
       <li>
         <a href="/form/setting">
         <i class="icon-settings"></i>
-        Form Settings</a>
+      <span class="title">  Form Settings</span></a>
       </li>
+
       <li class="start ">
         <a href="javascript:;">
         <i class="icon-handbag"></i>
@@ -138,6 +139,56 @@
       </li>
     </ul>
     </li>
+    <li>
+      <a href="/section/setting">
+      <i class="icon-settings"></i>
+      <span class="title">Section Settings</span></a>
+    </li>
+    <li class="start ">
+      <a href="javascript:;">
+      <i class="fa fa-briefcase"></i>
+      <span class="title">Content Management</span>
+      <span class="arrow "></span>
+      </a>
+
+  <ul class="sub-menu">
+  <li>
+    <a href="#">
+    <i class="fa fa-sliders"></i>
+      <span class="title">Main Slider</span>
+      <span class="arrow "></span>
+    </a>
+
+    <ul class="sub-menu">
+    <li>
+      <a href="/sliders/list">
+      <i class="icon-diamond"></i>
+      Slider List</a>
+    </li>
+    <li>
+      <a href="/sliders/create">
+      <i class="icon-pencil"></i>
+      New Slider</a>
+    </li>
+  </ul>
+  </li>
+  <li>
+    <a href="/logo/setting">
+    <i class="fa fa-compass"></i>
+    Logo</a>
+  </li>
+  <li>
+  <a href="/banner/setting">
+  <i class="fa fa-flag-checkered"></i>
+  Banner</a>
+</li>
+<li>
+<a href="/address/setting">
+<i class="fa fa-flag"></i>
+Address</a>
+</li>
+</ul>
+</li>
     </ul>
     <!-- END SIDEBAR MENU -->
   </div>

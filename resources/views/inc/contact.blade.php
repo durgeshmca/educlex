@@ -40,6 +40,7 @@
     <!-- Footer Coypright -->
     <div class="footer-copyright">
         <div class="container">
+          @if(isset($sections[7]) && $sections[7]->status)
             <h3>A Unit Of Verclex Network Pvt Ltd</h3>
             <ul class="copyright-socials">
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -48,6 +49,7 @@
                 <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
             </ul>
+            @endif
             <P>All Rights Reserved.</P>
         </div>
     </div>

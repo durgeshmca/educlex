@@ -48,6 +48,10 @@ function openForm(formid){
 var srcurl="/form/workshop";
 
     switch (formid) {
+      case 0:
+        srcurl="/form/popup";
+        $('#myModal').modal('show');
+        break;
       case 1:
         srcurl="/form/workshop";
         break;

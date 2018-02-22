@@ -73,3 +73,15 @@ Route::get('/projects/list/{id}','ProjectsController@projectList');
 Route::get('/projects/create','ProjectsController@create');
 Route::post('/projects/add','ProjectsController@store');
 Route::delete('/projects/delete/{id}','ProjectsController@destroy');
+
+//section Settings
+Route::get('/section/setting','SectionsSetting@index');
+Route::get('/section/setting/{id}','SectionsSetting@show');
+Route::post('/section/setting/{id}/store','SectionsSetting@store');
+//sliders settings
+Route::get('/sliders/list','SlidersController@sliderList');
+Route::post('/sliders/list/{id}/store','SlidersController@store');
+Route::get('/sliders/list/{id}','SlidersController@sliderList');
+Route::get('/sliders/create','SlidersController@create');
+Route::post('/sliders/add','SlidersController@store');
+Route::delete('/sliders/delete/{id}','SlidersController@destroy');
