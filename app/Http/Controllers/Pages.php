@@ -23,7 +23,7 @@ class Pages extends Controller
                         ->with('formList',$formList)
                         ->with('allProjects',$projects)
                         ->with('sections',$sections)
-                        ->with('sliders',$sliders);
+                        ->with('sliders',$sliders)
                         ->with('profile',$profile);
    }
    public function getForms($name)

@@ -48,7 +48,7 @@ function openForm(formid){
 var srcurl="/form/workshop";
 if(typeof formid =='string'){
   srcurl = formid;
-  $('#myModal').modal('show');
+  //$('#myModal').modal('show');
 }else{
     switch (formid) {
       case 0:
