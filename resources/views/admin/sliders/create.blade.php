@@ -92,6 +92,17 @@
                         </div>
                       </div>
                       <div class="form-group">
+                        <label class="col-md-3 control-label">Open link In</label>
+                        <div class="col-md-4">
+                          <select class="form-control input-circle" name="slider_link_target">
+                              <option value="">Select Type</option>
+                              <option value="modal">Modal</option>
+                              <option value="same">Same Window</option>
+                              <option value="new">New window</option>
+                              </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
                         <label class="col-md-3 control-label">Slider Main Heading</label>
                         <div class="col-md-4">
                           <div class="input-group">

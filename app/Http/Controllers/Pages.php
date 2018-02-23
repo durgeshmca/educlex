@@ -7,6 +7,7 @@ use App\Course;
 use App\Project;
 use App\FormSetting;
 use App\Section;
+use App\Slider;
 class Pages extends Controller
 {
     public function main()
@@ -15,10 +16,12 @@ class Pages extends Controller
       $formList = FormSetting::get(['id','status']);
       $projects = Project::get();
       $sections = Section::get(['id','status']);
+      $sliders = Slider::get();
       return view('main')->with('courses',$courses)
                         ->with('formList',$formList)
                         ->with('allProjects',$projects)
-                        ->with('sections',$sections);
+                        ->with('sections',$sections)
+                        ->with('sliders',$sliders);
    }
    public function getForms($name)
    {

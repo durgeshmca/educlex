@@ -58,9 +58,9 @@
 
                 <div class="portlet-body form">
                     @include('admin.inc.messages')
-                    @if(count($sliders)==1)
+                    @if(isset($sliders->type) && count($sliders)==1)
                   <!-- BEGIN FORM-->
-                  <form action="/sliders/list/{{$sliders->id}}/store" class="form-horizontal"  method="post" >
+                  <form action="/sliders/list/{{$sliders->id}}/store" class="form-horizontal"  method="post" enctype="multipart/form-data" >
                     {{csrf_field()}}
                     <div class="form-body">
                       <div class="form-group">
@@ -68,9 +68,9 @@
                         <div class="col-md-4">
                           <select class="form-control input-circle" name="type">
                               <option value="">Select Type</option>
-                              <option value="1">Type 1</option>
-                              <option value="2">Type 2</option>
-                              <option value="3">Type 3</option>
+                              <option value="1" <?php if($sliders->type==1){echo "selected='selected'";} ?>>Type 1</option>
+                              <option value="2" <?php if($sliders->type==2){echo "selected='selected'";} ?>>Type 2</option>
+                              <option value="3" <?php if($sliders->type==3){echo "selected='selected'";} ?>>Type 3</option>
                               </select>
                         </div>
                       </div>
@@ -90,6 +90,17 @@
                             <input type="text" name="slider_link"  class="form-control input-circle" value="{{ $sliders->slider_link }}"/>
 
                           </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-3 control-label">Open link In</label>
+                        <div class="col-md-4">
+                          <select class="form-control input-circle" name="slider_link_target">
+                              <option value="">Select Type</option>
+                              <option value="modal" <?php if($sliders->slider_link_target=="modal"){echo "selected='selected'";} ?>>Modal</option>
+                              <option value="same" <?php if($sliders->slider_link_target=="same"){echo "selected='selected'";} ?>>Same Window</option>
+                              <option value="new" <?php if($sliders->slider_link_target=="new"){echo "selected='selected'";} ?>>New window</option>
+                              </select>
                         </div>
                       </div>
                       <div class="form-group">
@@ -114,7 +125,7 @@
                         <label class="col-md-3 control-label">Slider Image</label>
                         <div class="col-md-4">
                           <div class="input-group">
-                            <img src="{{ $sliders->slider_image }}" />
+                            <img src="/assets/frontend/onepage2/img/slider/{{ $sliders->slider_image }}" />
 
                           </div>
                         </div>
@@ -169,9 +180,18 @@
 															<span class="font-blue">{{$slider->type}}</span>
 														</td>
 														<td>
-                              <span class="font-blue">{{$slider->desc}}</span>
+                              <span class="font-blue">{{$slider->slider_heading}}</span>
 															<i class="fa fa-user font-blue">
 															</i>
+														</td>
+                            <td>
+															<span class="font-blue">{{$slider->slider_sub_heading}}</span>
+														</td>
+                            <td>
+															<span class="font-blue">{{$slider->slider_link_label}}</span>
+														</td>
+                            <td>
+															<span class="font-blue">{{$slider->slider_link}}</span>
 														</td>
 														<td>
 

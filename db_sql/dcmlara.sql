@@ -2,10 +2,10 @@
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Feb 22, 2018 at 01:37 PM
--- Server version: 5.7.19
--- PHP Version: 7.1.9
+-- Host: 127.0.0.1
+-- Generation Time: Feb 23, 2018 at 04:46 AM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.1.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -28,17 +28,15 @@ SET time_zone = "+00:00";
 -- Table structure for table `albums`
 --
 
-DROP TABLE IF EXISTS `albums`;
-CREATE TABLE IF NOT EXISTS `albums` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `albums` (
+  `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `cover_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tag` enum('PHP','JAVA','ANDROID','HADOOP','DATABASE') COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `albums`
@@ -58,9 +56,8 @@ INSERT INTO `albums` (`id`, `name`, `description`, `cover_image`, `tag`, `create
 -- Table structure for table `classrooms`
 --
 
-DROP TABLE IF EXISTS `classrooms`;
-CREATE TABLE IF NOT EXISTS `classrooms` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `classrooms` (
+  `id` int(10) UNSIGNED NOT NULL,
   `fname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -78,8 +75,7 @@ CREATE TABLE IF NOT EXISTS `classrooms` (
   `payment_mode` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `images` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -88,9 +84,8 @@ CREATE TABLE IF NOT EXISTS `classrooms` (
 -- Table structure for table `college_wrokshops`
 --
 
-DROP TABLE IF EXISTS `college_wrokshops`;
-CREATE TABLE IF NOT EXISTS `college_wrokshops` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `college_wrokshops` (
+  `id` int(10) UNSIGNED NOT NULL,
   `fname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -106,9 +101,8 @@ CREATE TABLE IF NOT EXISTS `college_wrokshops` (
   `payment_mode` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `placement_assistance` tinyint(1) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `college_wrokshops`
@@ -127,18 +121,16 @@ INSERT INTO `college_wrokshops` (`id`, `fname`, `lname`, `email`, `contact`, `co
 -- Table structure for table `contacts`
 --
 
-DROP TABLE IF EXISTS `contacts`;
-CREATE TABLE IF NOT EXISTS `contacts` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `contacts` (
+  `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `subject` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `contacts`
@@ -154,9 +146,8 @@ INSERT INTO `contacts` (`id`, `name`, `email`, `phone`, `subject`, `message`, `c
 -- Table structure for table `corporates`
 --
 
-DROP TABLE IF EXISTS `corporates`;
-CREATE TABLE IF NOT EXISTS `corporates` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `corporates` (
+  `id` int(10) UNSIGNED NOT NULL,
   `fname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -172,9 +163,8 @@ CREATE TABLE IF NOT EXISTS `corporates` (
   `interests` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `payment_mode` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `corporates`
@@ -189,16 +179,14 @@ INSERT INTO `corporates` (`id`, `fname`, `lname`, `email`, `contact`, `company`,
 -- Table structure for table `courses`
 --
 
-DROP TABLE IF EXISTS `courses`;
-CREATE TABLE IF NOT EXISTS `courses` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `courses` (
+  `id` int(10) UNSIGNED NOT NULL,
   `course` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `desc` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `created_at` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `courses`
@@ -233,16 +221,14 @@ INSERT INTO `courses` (`id`, `course`, `content`, `desc`, `updated_at`, `created
 -- Table structure for table `form_settings`
 --
 
-DROP TABLE IF EXISTS `form_settings`;
-CREATE TABLE IF NOT EXISTS `form_settings` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `form_settings` (
+  `id` int(10) UNSIGNED NOT NULL,
   `form_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `link_label` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` tinyint(1) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `form_settings`
@@ -263,9 +249,8 @@ INSERT INTO `form_settings` (`id`, `form_name`, `link_label`, `status`, `created
 -- Table structure for table `industrial_trainings`
 --
 
-DROP TABLE IF EXISTS `industrial_trainings`;
-CREATE TABLE IF NOT EXISTS `industrial_trainings` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `industrial_trainings` (
+  `id` int(10) UNSIGNED NOT NULL,
   `fname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -281,9 +266,8 @@ CREATE TABLE IF NOT EXISTS `industrial_trainings` (
   `images` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `payment_mode` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `industrial_trainings`
@@ -298,13 +282,11 @@ INSERT INTO `industrial_trainings` (`id`, `fname`, `lname`, `email`, `contact`, 
 -- Table structure for table `migrations`
 --
 
-DROP TABLE IF EXISTS `migrations`;
-CREATE TABLE IF NOT EXISTS `migrations` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -332,12 +314,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- Table structure for table `password_resets`
 --
 
-DROP TABLE IF EXISTS `password_resets`;
-CREATE TABLE IF NOT EXISTS `password_resets` (
+CREATE TABLE `password_resets` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  KEY `password_resets_email_index` (`email`)
+  `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -346,18 +326,16 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 -- Table structure for table `photos`
 --
 
-DROP TABLE IF EXISTS `photos`;
-CREATE TABLE IF NOT EXISTS `photos` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `photos` (
+  `id` int(10) UNSIGNED NOT NULL,
   `album_id` int(11) NOT NULL,
   `photo` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `size` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `photos`
@@ -380,16 +358,14 @@ INSERT INTO `photos` (`id`, `album_id`, `photo`, `title`, `size`, `description`,
 -- Table structure for table `projects`
 --
 
-DROP TABLE IF EXISTS `projects`;
-CREATE TABLE IF NOT EXISTS `projects` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `projects` (
+  `id` int(10) UNSIGNED NOT NULL,
   `project` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `desc` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `created_at` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `projects`
@@ -407,15 +383,13 @@ INSERT INTO `projects` (`id`, `project`, `content`, `desc`, `updated_at`, `creat
 -- Table structure for table `sections`
 --
 
-DROP TABLE IF EXISTS `sections`;
-CREATE TABLE IF NOT EXISTS `sections` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `sections` (
+  `id` int(10) UNSIGNED NOT NULL,
   `section_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` tinyint(1) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `sections`
@@ -438,27 +412,27 @@ INSERT INTO `sections` (`id`, `section_name`, `status`, `created_at`, `updated_a
 -- Table structure for table `sliders`
 --
 
-DROP TABLE IF EXISTS `sliders`;
-CREATE TABLE IF NOT EXISTS `sliders` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `sliders` (
+  `id` int(10) UNSIGNED NOT NULL,
   `type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'There are three slider type',
   `slider_link_label` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `slider_link` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slider_link_target` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'modal',
   `slider_image` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `slider_heading` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `slider_sub_heading` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `sliders`
 --
 
-INSERT INTO `sliders` (`id`, `type`, `slider_link_label`, `slider_link`, `slider_image`, `slider_heading`, `slider_sub_heading`, `created_at`, `updated_at`) VALUES
-(1, '1', 'Learn More', '/form/popup', NULL, 'Heloo testing Heading', 'Testing sub headings', '2018-02-22 07:30:47', '2018-02-22 07:30:47'),
-(2, '2', 'tttttt', 'afafdadf', 'logo_scroll_1518181948_1519305191.png', 'vzvzvzv', 'zvzvzvzv', '2018-02-22 07:43:11', '2018-02-22 07:43:11');
+INSERT INTO `sliders` (`id`, `type`, `slider_link_label`, `slider_link`, `slider_link_target`, `slider_image`, `slider_heading`, `slider_sub_heading`, `created_at`, `updated_at`) VALUES
+(4, '1', 'Workshop Form', '/form/workshop', 'modal', 'hadoop_inv_1519319938.png', 'Grab The Latest<br>Technologies', 'We Have All Industrial Experts<br>Join Now', '2018-02-22 11:48:58', '2018-02-22 11:48:58'),
+(5, '2', 'More', '#', 'modal', 'device_1519324573.png', 'Unlimited Access Of <br> All Courses', 'Available', '2018-02-22 13:06:13', '2018-02-22 13:06:13'),
+(6, '3', 'Learn More', '#', 'modal', 'bg_slider3_1519325797.jpg', 'Let Us Grow', 'A Few Things', '2018-02-22 13:12:24', '2018-02-22 13:26:37');
 
 -- --------------------------------------------------------
 
@@ -466,18 +440,15 @@ INSERT INTO `sliders` (`id`, `type`, `slider_link_label`, `slider_link`, `slider
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
@@ -492,9 +463,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `creat
 -- Table structure for table `workshop_enquiries`
 --
 
-DROP TABLE IF EXISTS `workshop_enquiries`;
-CREATE TABLE IF NOT EXISTS `workshop_enquiries` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `workshop_enquiries` (
+  `id` int(10) UNSIGNED NOT NULL,
   `enquiry_type` enum('individual','classroom','','') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'individual',
   `fname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -513,9 +483,8 @@ CREATE TABLE IF NOT EXISTS `workshop_enquiries` (
   `interests` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `images` mediumtext COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `workshop_enquiries`
@@ -534,6 +503,201 @@ INSERT INTO `workshop_enquiries` (`id`, `enquiry_type`, `fname`, `lname`, `email
 (12, 'individual', 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'student', 'B.Tech/B.E.', NULL, NULL, 'United Institute of Management', '3', 'hadoop,php,java,python', 'uploads.individual/CKFLgSzK5QpPamIzwmkSKHqDbVFiq3KV9YJqmPep.png', '2018-01-30 00:30:03', '2018-01-30 00:30:03'),
 (13, 'individual', 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'professional', 'B.Tech/B.E.', 'Team Leader', 'Xsinfosol', NULL, '-1', 'hadoop,java,python', 'uploads.individual/Dp5MZ3jP9iryGPiim1AKnu0gxMd9SB4nVIPKoZKt.png', '2018-01-30 00:31:22', '2018-01-30 00:31:22'),
 (14, 'individual', 'Durgesh', 'Mishra', 'durgeshcmishra@gmail.com', '9811167005', 'Panigon Baba Ka Purwa Kalakankar Kunda Pratapgarh', 'Uttar Pradesh', 'Uttar Pradesh', 'Pratapgarh', 'professional', 'B.Tech/B.E.', 'Team Leader', 'Xsinfosol', NULL, '-1', 'hadoop,java,python', 'uploads.individual/tX37gGxMFTFpzKwUxjx0y8JGjDgkTdw0WKkbQIC3.png', '2018-01-30 00:32:58', '2018-01-30 00:32:58');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `albums`
+--
+ALTER TABLE `albums`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `classrooms`
+--
+ALTER TABLE `classrooms`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `college_wrokshops`
+--
+ALTER TABLE `college_wrokshops`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `corporates`
+--
+ALTER TABLE `corporates`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `courses`
+--
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `form_settings`
+--
+ALTER TABLE `form_settings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `industrial_trainings`
+--
+ALTER TABLE `industrial_trainings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indexes for table `photos`
+--
+ALTER TABLE `photos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `projects`
+--
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sections`
+--
+ALTER TABLE `sections`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sliders`
+--
+ALTER TABLE `sliders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- Indexes for table `workshop_enquiries`
+--
+ALTER TABLE `workshop_enquiries`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `albums`
+--
+ALTER TABLE `albums`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `classrooms`
+--
+ALTER TABLE `classrooms`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `college_wrokshops`
+--
+ALTER TABLE `college_wrokshops`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `corporates`
+--
+ALTER TABLE `corporates`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `courses`
+--
+ALTER TABLE `courses`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `form_settings`
+--
+ALTER TABLE `form_settings`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `industrial_trainings`
+--
+ALTER TABLE `industrial_trainings`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `photos`
+--
+ALTER TABLE `photos`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `projects`
+--
+ALTER TABLE `projects`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `sections`
+--
+ALTER TABLE `sections`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `sliders`
+--
+ALTER TABLE `sliders`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `workshop_enquiries`
+--
+ALTER TABLE `workshop_enquiries`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
