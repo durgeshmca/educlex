@@ -85,3 +85,12 @@ Route::get('/sliders/list/{id}','SlidersController@sliderList');
 Route::get('/sliders/create','SlidersController@create');
 Route::post('/sliders/add','SlidersController@store');
 Route::delete('/sliders/delete/{id}','SlidersController@destroy');
+//logo banner uploads
+Route::get('/logo/setting','UploadsController@viewLogo');
+Route::post('/logo/upload','UploadsController@uploadLogo');
+Route::get('/banner/setting','UploadsController@viewBanner');
+Route::post('/banner/upload','UploadsController@uploadBanner');
+
+//company profiles
+Route::get('/profile/setting','ProfileController@index');
+Route::post('/profile/update','ProfileController@update');

@@ -183,9 +183,9 @@
   Banner</a>
 </li>
 <li>
-<a href="/address/setting">
+<a href="/profile/setting">
 <i class="fa fa-flag"></i>
-Address</a>
+Profile</a>
 </li>
 </ul>
 </li>

@@ -40,7 +40,13 @@
                         data-speed="900"
                         data-start="2000"
                         data-easing="easeOutExpo">
-                        <a href="javascript:void(0);" class="btn-brd-white" onclick="openForm('{{ $slider->slider_link }}')">{{ $slider->slider_link_label }}</a>
+                        @if($slider->slider_link_target == 'modal')
+                        <a href="javascript:void(0);" class="btn-brd-white" data-toggle="modal" data-target='#myModal' onclick="openForm('{{ $slider->slider_link }}')">{{ $slider->slider_link_label }}</a>
+                        @elseif($slider->slider_link_target == 'same')
+                        <a href="{{ $slider->slider_link }}" class="btn-brd-white"  target="_self" >{{ $slider->slider_link_label }}</a>
+                        @else
+                        <a href="{{ $slider->slider_link }}" class="btn-brd-white" target="_blank"  >{{ $slider->slider_link_label }}</a>
+                        @endif
                     </div>
                     <div class="caption lfb tp-resizeme"
                         data-x="right"
@@ -88,7 +94,13 @@
                         data-speed="900"
                         data-start="1500"
                         data-easing="easeOutExpo">
-                        <button class="btn btn-info">{{ $slider->slider_link_label }}</button>
+                        @if($slider->slider_link_target == 'modal')
+                        <a href="javascript:void(0);" class="btn-brd-white" data-toggle="modal" data-target='#myModal' onclick="openForm('{{ $slider->slider_link }}')">{{ $slider->slider_link_label }}</a>
+                        @elseif($slider->slider_link_target == 'same')
+                        <a href="{{ $slider->slider_link }}" class="btn-brd-white"  target="_self" >{{ $slider->slider_link_label }}</a>
+                        @else
+                        <a href="{{ $slider->slider_link }}" class="btn-brd-white" target="_blank"  >{{ $slider->slider_link_label }}</a>
+                        @endif
                         |
                     </a>
                     <div class="caption lfb tp-resizeme"
@@ -158,7 +170,13 @@
                         data-speed="900"
                         data-start="2000"
                         data-easing="easeOutExpo">
-                        <a href="{{$slider->slider_link}}" class="btn-brd-white">{{$slider->slider_link_label}}</a>
+                        @if($slider->slider_link_target == 'modal')
+                        <a href="javascript:void(0);" class="btn-brd-white" data-toggle="modal" data-target='#myModal' onclick="openForm('{{ $slider->slider_link }}')">{{ $slider->slider_link_label }}</a>
+                        @elseif($slider->slider_link_target == 'same')
+                        <a href="{{ $slider->slider_link }}" class="btn-brd-white"  target="_self" >{{ $slider->slider_link_label }}</a>
+                        @else
+                        <a href="{{ $slider->slider_link }}" class="btn-brd-white" target="_blank"  >{{ $slider->slider_link_label }}</a>
+                        @endif
                     </div>
                 </li>
               <?php } ?>
