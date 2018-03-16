@@ -7,9 +7,12 @@
                 <div class="col-sm-6">
                     <div class="heading-left-light">
                         <h2>Say hello to Educlex</h2>
-                        <p>Send your queries and register with us <br> for your training needs</p>
-                        <p>Contact No: +91-7053601998</p>
-                        <p>Email ID : info@educlex.com</p>
+                          <p>Send your queries and register with us <br> for your training needs</p>
+                        <p>Address:</p>
+                        <p>{{$profile->address}}</p>
+
+                        <p>Contact No: {{$profile->contacts}}</p>
+                        <p>Email ID : {{$profile->email}}</p>
                     </div>
                 </div>
                 <div class="col-sm-6">

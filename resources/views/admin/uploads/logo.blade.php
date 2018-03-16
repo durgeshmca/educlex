@@ -59,7 +59,7 @@
                 <div class="portlet-body form">
                     @include('admin.inc.messages')
                   <!-- BEGIN FORM-->
-                  <form action="/upload/logo" class="form-horizontal"  method="post" enctype="multipart/form-data">
+                  <form action="/logo/upload" class="form-horizontal"  method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-body">
                       <div class="form-group">
